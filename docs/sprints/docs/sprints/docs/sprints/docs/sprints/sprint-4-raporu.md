@@ -7,19 +7,19 @@
 - Hedef: Projeyi cilalamak, dokümantasyonu bitirmek ve teslim etmek.
 - Planlanan görevler:
   - Hata düzeltme ve son testler (Sorumlu: [İsim])
-  - Arayüz ve kullanılabilirlik iyileştirmeleri (Sorumlu: [İsim])
-  - README, veri kaynakları ve demo linkinin eklenmesi (Sorumlu: [İsim])
-  - Demo videosunun hazırlanması (Sorumlu: [İsim])
+  - README, veri kaynakları ve demo linki (Sorumlu: [İsim])
+  - GitHub Pages yayını (Sorumlu: [İsim])
+  - Demo videosu (Sorumlu: [İsim])
   - Space Apps platformuna teslim (Sorumlu: [İsim])
 
 ## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
 **Tamamlanan:**
-- Son testler ve hata düzeltmeleri
+- Son testler
 - README ve sprint raporları
 - Demo videosu
 - Proje teslimi
 **Tamamlanamayan (ve nedeni):**
-- [Süre yetmeyen geliştirmeleri yazın. Örn. "Gerçek cihaz verisiyle entegrasyon, gelecek çalışma olarak bırakıldı"]
+- Gerçek cihaz/sensör entegrasyonu ve canlı AI backend'i, gelecek çalışma olarak bırakıldı.
 
 ## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
 - Teslim saatine yakın yoğunluk.
@@ -34,7 +34,7 @@
 |---|---|---|
 | [Ad Soyad] | [Rol] | [Katkı] |
 
-## 6. Bir Sonraki Adımlar (Gelecek Çalışmalar)
-- Gerçek biyometrik cihazlarla entegrasyon.
-- Çevrimdışı çalışma desteği.
+## 6. Gelecek Çalışmalar
+- Gerçek biyometrik cihaz ve sensör entegrasyonu.
+- Canlı yapay zekâ backend'i (Gemini) ile AURA.
 - Daha kapsamlı kullanıcı testleri.
