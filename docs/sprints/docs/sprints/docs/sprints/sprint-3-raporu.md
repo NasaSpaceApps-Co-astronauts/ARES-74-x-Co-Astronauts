@@ -1,6 +1,7 @@
 #Sprint 3 Report
 
 **Date Range:** 15.11.2026 09:00 – 15.11.2026 14:00
+
 **Scrum Master:** Pınar ASLAN
 
 ## 1. Sprint Goals and Planned Missions
