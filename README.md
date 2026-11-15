@@ -47,10 +47,10 @@ No installation needed. Open the live demo at https://coastronautshealthtracker.
 ## Team
 | Member | Role |
 |---|---|
-| Pınar Aslan | Scrum Master | Araştırma ve Veri|
-| Elif Örnek | Geliştirici ve Lider | Netlify canlı yayın, demo linki ve demo videosu, SpaceApps Teslimi|
-| Zeynep Ece Kayaboynu |Ürün/İçerik|Araştırma ve Veri|Hata düzeltme ve testler |
-| Günsu Bostancı |Araştırma ve Veri|Hata düzeltme ve testler |
+| Pınar ASLAN | Scrum Master | Research and Data|
+| Elif ÖRNEK| Developer and Leader | Netlify live stream, demo link and demo video, SpaceApps Delivery|
+| Zeynep Ece KAYABOYNU|Product/Content|Research and Data|Bug fixes and tests |
+| Günsu Bostancı |Research and Data|Bug fixes and tests |
 
 ## Sprint Reports
 - [Sprint 1](docs/sprints/sprint-1-raporu.md)
