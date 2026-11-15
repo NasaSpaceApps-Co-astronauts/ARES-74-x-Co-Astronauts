@@ -1,25 +1,23 @@
 # Sprint 3 Raporu
 
 **Tarih Aralığı:** 15.11.2026 09:00 – 15.11.2026 14:00
-**Scrum Master:** [İsim]
+**Scrum Master:** Pınar Aslan
 
 ## 1. Sprint Hedefleri ve Planlanan Görevler
 - Hedef: Tüm ana özellikleri tamamlamak ve test etmek.
 - Planlanan görevler:
-  - AURA PIN korumalı sohbet ve yerel yanıt motoru (Sorumlu: [İsim])
-  - NASA ISSLIVE, NOAA SWPC ve NASA DONKI veri entegrasyonu (Sorumlu: [İsim])
-  - 4-7-8 nefes egzersizi ve Web Audio API ses araçları (Sorumlu: [İsim])
-  - Sesli mesaj kaydı ve yükleme (Sorumlu: [İsim])
-  - Vital yenileme hatırlatıcıları (Sorumlu: [İsim])
-  - 30 tıbbi cihaz rehberi ve CSV içe aktarma (Sorumlu: [İsim])
+  - AURA PIN korumalı sohbet ve yerel yanıt motoru (Sorumlu: Elif Örnek)
+  - NASA ISSLIVE, NOAA SWPC ve NASA DONKI veri entegrasyonu (Sorumlu: Günsu Bostancı)
+  - 4-7-8 nefes egzersizi, Web Audio API ses araçları ve sesli mesaj kaydı (Sorumlu: Pınar Aslan)
+  - Vital yenileme hatırlatıcıları, 30 tıbbi cihaz rehberi ve CSV içe aktarma (Sorumlu: Zeynep Ece Kayaboynu)
 
 ## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
 **Tamamlanan:**
 - AURA sohbeti, PIN kilidi ve 3 rol
 - Canlı ISS, uzay havası ve DONKI akışı
-- Nefes ve ses araçları
-- Sesli mesaj kasası ve hatırlatıcılar
-- 30 cihaz rehberi ve CSV yükleme
+- Nefes ve ses araçları, sesli mesaj kasası
+- Hatırlatıcılar, 30 cihaz rehberi ve CSV yükleme
+
 **Tamamlanamayan (ve nedeni):**
 - AURA için canlı yapay zekâ backend'i: etkinlik süresinde tamamlanamadı, yerel yanıt motoru kullanıldı.
 - Gerçek sensör verisi entegrasyonu: biyometrik veriler simülasyon olarak bırakıldı.
@@ -37,9 +35,12 @@
 ## 5. Takım Üyelerinin Katkıları
 | Üye | Rol | Katkı |
 |---|---|---|
-| [Ad Soyad] | [Rol] | [Katkı] |
+| Pınar Aslan | Scrum Master | Nefes egzersizi, ses araçları, sesli mesaj kasası |
+| Elif Örnek | Geliştirici | AURA sohbeti ve yerel yanıt motoru |
+| Günsu Bostancı | Araştırma / Veri | NASA/NOAA/DONKI canlı veri entegrasyonu |
+| Zeynep Ece Kayaboynu | Ürün / İçerik | Hatırlatıcılar, 30 cihaz rehberi, CSV içe aktarma |
 
 ## 6. Bir Sonraki Sprint Hedefleri
 - Hata düzeltme ve arayüz cilalama.
 - README ve dokümantasyon.
-- GitHub Pages yayını, demo videosu ve teslim.
+- Netlify ile canlı yayın, demo videosu ve teslim.
