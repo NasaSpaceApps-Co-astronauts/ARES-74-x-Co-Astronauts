@@ -1,44 +1,43 @@
-# Sprint 2 Raporu
+# Sprint 2 Report
 
-**Tarih Aralığı:** 14.11.2026 14:00 – 14.11.2026 20:00
-**Scrum Master:** Pınar Aslan
+**Date Range:** 11/14/2026 14:00 – 11/14/2026 20:00
+**Scrum Master:** Pınar ASLAN
 
-## 1. Sprint Hedefleri ve Planlanan Görevler
-- Hedef: Çalışan temel prototip ve çekirdek özellikler.
-- Planlanan görevler:
-  - Sayfa iskeleti, görünüm geçişleri ve tema (Sorumlu: Pınar Aslan)
-  - 4 mürettebat profili ve biyometrik telemetri kartları (Sorumlu: Elif Örnek)
-  - NASA HRP risk panelleri (Sorumlu: Günsu Bostancı)
-  - Yeşil/Sarı/Kırmızı sağlık rehberi, 15 durum (Sorumlu: Zeynep Ece Kayaboynu)
+## 1. Sprint Goals and Planned Missions
+- Target: Basic prototypes and core features that work.
+- Scheduled tasks:
+- Page frame, view transitions and theme (Responsible: Pınar ASLAN)
+- 4 crew profiles and biometric telemetry cards (Responsible: Elif ÖRNEK)
+- NASA HRP risk panels (Responsible: Günsu BOSTANCI)
+- Green/Yellow/Red health guide, 15 conditions (Responsible: Zeynep Ece KAYABOYNU)
 
-## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
-**Tamamlanan:**
-- Sayfa iskeleti, sekmeler ve tema
-- Kontrol paneli ve mürettebat profilleri
-- HRP risk panelleri
-- 15 durumluk sağlık rehberi, arama ve filtre
+## 2. Completed and Incomplete Studies
+**Completed:**
+- Page frame, tabs and theme
+- Control panel and crew profiles
+- HRP risk panels
+- 15-status health guide, search and filter
+**Incomplete:**
+- None
 
-**Tamamlanamayan:**
-- Yok
+## 3. Technical / Organizational Problems Encountered
+- Working with more than one person on the same file.
+- Layout issues in different screen sizes.
 
-## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
-- Aynı dosya üzerinde birden fazla kişinin çalışması.
-- Farklı ekran boyutlarında düzen sorunları.
+## 4. Applied Solution Methods
+- The tasks were divided into sections and distributed.
+- Responsive CSS grid structure was used.
 
-## 4. Uygulanan Çözüm Yöntemleri
-- Görevler bölümlere ayrılarak dağıtıldı.
-- Duyarlı (responsive) CSS grid yapısı kullanıldı.
-
-## 5. Takım Üyelerinin Katkıları
-| Üye | Rol | Katkı |
+## 5. Contributions of Team Members
+| Member| Role | Contribution|
 |---|---|---|
-| Pınar Aslan | Scrum Master | Sayfa iskeleti, görünüm geçişleri, tema |
-| Elif Örnek | Geliştirici | Mürettebat profilleri ve telemetri kartları |
-| Günsu Bostancı | Araştırma / Veri | NASA HRP risk panelleri |
-| Zeynep Ece Kayaboynu | Ürün / İçerik | 15 durumluk sağlık rehberi içeriği |
+| Pınar ASLAN | Scrum Master | Page frame, view transitions, theme |
+| Elif ÖRNEK | Developer| Crew profiles and telemetry cards |
+| Günsu BOSTANCI |Research / Data | NASA HRP risk panels |
+| Zeynep Ece KAYABOYNU|Product / Content | 15-status health guide content |
 
-## 6. Bir Sonraki Sprint Hedefleri
-- AURA sohbetini (PIN korumalı, 3 rol) geliştirmek.
-- NASA/NOAA canlı veri akışını eklemek.
-- Nefes egzersizi, ses araçları ve sesli mesaj bölümünü eklemek.
-- Hatırlatıcıları ve 30 tıbbi cihaz rehberini hazırlamak.
+## 6. Next Sprint Goals
+- Improving AURA chat (PIN protected, 3 roles).
+- Add NASA/NOAA live data stream.
+- Add breathing exercise, sound tools and voice message section.
+- Preparing reminders and 30 medical device guides.
