@@ -1,6 +1,7 @@
 # Sprint 2 Report
 
 **Date Range:** 11/14/2026 14:00 – 11/14/2026 20:00
+
 **Scrum Master:** Pınar ASLAN
 
 ## 1. Sprint Goals and Planned Missions
