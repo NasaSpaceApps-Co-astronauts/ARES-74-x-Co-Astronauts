@@ -20,7 +20,7 @@
 - İlk arayüz taslağı
 - Teknoloji seçimi
 
-**Tamamlanamayan ve nedeni :**
+**Tamamlanamayan:**
 - Yok
 
 ## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
