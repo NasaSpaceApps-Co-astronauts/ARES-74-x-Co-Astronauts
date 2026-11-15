@@ -1,6 +1,7 @@
 # Sprint 4 Report
 
 **Date Range:** 15.11.2026 15:00 – 15.11.2026 23:00
+
 **Scrum Master:** Pınar ASLAN
 
 ## 1. Sprint Goals and Planned Missions
