@@ -17,6 +17,7 @@
 - Kontrol paneli ve mürettebat profilleri
 - HRP risk panelleri
 - 15 durumluk sağlık rehberi, arama ve filtre
+
 **Tamamlanamayan:**
 - Yok
 
