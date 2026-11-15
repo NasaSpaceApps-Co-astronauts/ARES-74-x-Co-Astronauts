@@ -1,46 +1,45 @@
-# Sprint 3 Raporu
+#Sprint 3 Report
 
-**Tarih Aralığı:** 15.11.2026 09:00 – 15.11.2026 14:00
-**Scrum Master:** Pınar Aslan
+**Date Range:** 15.11.2026 09:00 – 15.11.2026 14:00
+**Scrum Master:** Pınar ASLAN
 
-## 1. Sprint Hedefleri ve Planlanan Görevler
-- Hedef: Tüm ana özellikleri tamamlamak ve test etmek.
-- Planlanan görevler:
-  - AURA PIN korumalı sohbet ve yerel yanıt motoru (Sorumlu: Elif Örnek)
-  - NASA ISSLIVE, NOAA SWPC ve NASA DONKI veri entegrasyonu (Sorumlu: Günsu Bostancı)
-  - 4-7-8 nefes egzersizi, Web Audio API ses araçları ve sesli mesaj kaydı (Sorumlu: Pınar Aslan)
-  - Vital yenileme hatırlatıcıları, 30 tıbbi cihaz rehberi ve CSV içe aktarma (Sorumlu: Zeynep Ece Kayaboynu)
+## 1. Sprint Goals and Planned Missions
+- Goal: To complete and test all the main features.
+- Scheduled tasks:
+- AURA PIN protected chat and local response engine (Responsible: Elif ÖRNEK)
+- NASA ISSLIVE, NOAA SWPC and NASA DONKI data integration (Responsible: Günsu BOSTANCI)
+- 4-7-8 breathing exercises, Web Audio API audio tools and voice message recording (Responsible: Pınar ASLAN)
+- Vital renewal reminders, 30 medical device guides and CSV import (Responsible: Zeynep Ece KAYABOYNU)
 
-## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
-**Tamamlanan:**
-- AURA sohbeti, PIN kilidi ve 3 rol
-- Canlı ISS, uzay havası ve DONKI akışı
-- Nefes ve ses araçları, sesli mesaj kasası
-- Hatırlatıcılar, 30 cihaz rehberi ve CSV yükleme
+## 2.Completed and Incomplete Studies
+**Completed:**
+- AURA chat, PIN lock and 3 roles
+- Live ISS, space air and DONKI stream
+- Breath and sound tools, voice message safe
+- Reminders, 30 device books and CSV installation
+**Incomplete (and reason):**
+- Live artificial intelligence backend for AURA: could not be completed in the event period, local response engine was used.
+- Real sensor data integration: biometric data was left as simulation.
 
-**Tamamlanamayan (ve nedeni):**
-- AURA için canlı yapay zekâ backend'i: etkinlik süresinde tamamlanamadı, yerel yanıt motoru kullanıldı.
-- Gerçek sensör verisi entegrasyonu: biyometrik veriler simülasyon olarak bırakıldı.
+## 3.Technical / Organizational Problems Encountered
+- Access and format differences of external APIs (NASA DONKI DEMO_KEY request limit).
+- Autostart audio restriction of browsers.
+- Time pressure.
 
-## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
-- Harici API'lerin erişim ve format farklılıkları (NASA DONKI DEMO_KEY istek sınırı).
-- Tarayıcıların sesi otomatik başlatma kısıtı.
-- Zaman baskısı.
+## 4. Applied Solution Methods
+- If the data cannot be obtained, the backup structure that continues with the ready profile data has been established.
+- Sounds are edited to start with the button click.
+- If there is no backend, the local AURA response engine that works automatically is written.
 
-## 4. Uygulanan Çözüm Yöntemleri
-- Veri alınamazsa hazır profil verisiyle devam eden yedek yapı kuruldu.
-- Sesler buton tıklamasıyla başlatılacak şekilde düzenlendi.
-- Backend yoksa otomatik çalışan yerel AURA yanıt motoru yazıldı.
-
-## 5. Takım Üyelerinin Katkıları
-| Üye | Rol | Katkı |
+## 5. Contributions of Team Members
+| Member | Role | Contribution|
 |---|---|---|
-| Pınar Aslan | Scrum Master | Nefes egzersizi, ses araçları, sesli mesaj kasası |
-| Elif Örnek | Geliştirici | AURA sohbeti ve yerel yanıt motoru |
-| Günsu Bostancı | Araştırma / Veri | NASA/NOAA/DONKI canlı veri entegrasyonu |
-| Zeynep Ece Kayaboynu | Ürün / İçerik | Hatırlatıcılar, 30 cihaz rehberi, CSV içe aktarma |
+| Pınar ASLAN | Scrum Master | Breathing exercise, audio tools, voicemail case |
+| Elif ÖRNEK | Developer| AURA chat and local response engine |
+| Günsu BOSTANCI | Research / Data| NASA/NOAA/DONKI live data integration |
+| Zeynep Ece KAYABOYNU| Product / Content | Reminders, 30 device guides, CSV import |
 
-## 6. Bir Sonraki Sprint Hedefleri
-- Hata düzeltme ve arayüz cilalama.
-- README ve dokümantasyon.
-- Netlify ile canlı yayın, demo videosu ve teslim.
+## 6.Next Sprint Goals
+- Error correction and interface polishing.
+- README and documentation.
+- Live broadcast, demo video and delivery with Netlify.
