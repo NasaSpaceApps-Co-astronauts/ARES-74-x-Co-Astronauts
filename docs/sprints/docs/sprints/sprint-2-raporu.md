@@ -4,30 +4,28 @@
 **Scrum Master:** [İsim]
 
 ## 1. Sprint Hedefleri ve Planlanan Görevler
-- Hedef: Çalışan bir temel prototip ve çekirdek özelliklerin ilk sürümü.
+- Hedef: Çalışan temel prototip ve çekirdek özellikler.
 - Planlanan görevler:
-  - React + TypeScript + Tailwind altyapısının kurulması (Sorumlu: [İsim])
-  - Node.js/Express backend iskeletinin kurulması (Sorumlu: [İsim])
-  - Kişisel biyometrik telemetri ekranı (Sorumlu: [İsim])
-  - Habitat izleme paneli: basınç, sıcaklık, O₂, CO₂ (Sorumlu: [İsim])
-  - Yeşil/Sarı/Kırmızı sağlık rehberliği mantığı (Sorumlu: [İsim])
+  - Sayfa iskeleti, görünüm geçişleri ve tema (Sorumlu: [İsim])
+  - 4 mürettebat profili ve biyometrik telemetri kartları (Sorumlu: [İsim])
+  - NASA HRP risk panelleri (Sorumlu: [İsim])
+  - Yeşil/Sarı/Kırmızı sağlık rehberi, 15 durum (Sorumlu: [İsim])
 
 ## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
 **Tamamlanan:**
-- Frontend ve backend altyapısı
-- Biyometrik telemetri ekranı
-- Habitat izleme paneli
-- Renk kodlu sağlık rehberliği (ilk sürüm)
+- Kontrol paneli ve mürettebat profilleri
+- HRP risk panelleri
+- 15 durumluk sağlık rehberi, arama ve filtre
 **Tamamlanamayan (ve nedeni):**
-- [Varsa yazın, örn. "Uyku takibi, süre yetmediği için Sprint 3'e kaldı"]
+- [Varsa yazın, yoksa "Yok"]
 
 ## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
-- Frontend ile backend arasında veri formatı uyumsuzlukları.
-- Aynı dosyalar üzerinde çalışırken oluşan birleştirme çakışmaları.
+- Aynı dosya üzerinde birden fazla kişinin çalışması.
+- Farklı ekran boyutlarında düzen sorunları.
 
 ## 4. Uygulanan Çözüm Yöntemleri
-- Ortak veri modelleri (TypeScript tipleri) tanımlandı.
-- Üyeler farklı bileşenler üzerinde çalışacak şekilde görevler ayrıldı.
+- Görevler bölümlere ayrılarak dağıtıldı.
+- Duyarlı (responsive) CSS grid yapısı kullanıldı.
 
 ## 5. Takım Üyelerinin Katkıları
 | Üye | Rol | Katkı |
@@ -35,7 +33,7 @@
 | [Ad Soyad] | [Rol] | [Katkı] |
 
 ## 6. Bir Sonraki Sprint Hedefleri
-- AURA AI destek sohbetini (PIN korumalı) geliştirmek.
-- Uyku ve sirkadiyen ritim takibini eklemek.
-- NASA/NOAA uzay havası ve radyasyon uyarılarını entegre etmek.
-- 4-7-8 nefes egzersizi ve Dünya ses araçlarını eklemek.
+- AURA sohbetini (PIN korumalı, 3 rol) geliştirmek.
+- NASA/NOAA canlı veri akışını eklemek.
+- Nefes egzersizi, ses araçları, hatırlatıcılar ve ses kayıt bölümünü eklemek.
+- 30 tıbbi cihaz rehberini hazırlamak.
