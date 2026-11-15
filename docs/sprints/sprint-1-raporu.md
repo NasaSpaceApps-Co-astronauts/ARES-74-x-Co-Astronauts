@@ -19,7 +19,8 @@
 - Özellik listesi ve önceliklendirme
 - İlk arayüz taslağı
 - Teknoloji seçimi
-**Tamamlanamayan (ve nedeni):**
+
+**Tamamlanamayan ve nedeni :**
 - Yok
 
 ## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
