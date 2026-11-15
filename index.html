@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARES-74 × Co-Astronauts • Unified Health, Devices, Family
+Voices & AURA</title>
+  <style>
+    :root{--bg:#030712;--card:#0f172a;--card2:#020617;--bd:#1e293b;--cy:#22d3ee;--bl:#2563eb;--tx:#f8fafc;--mu:#94a3b8;--gn:#34d399;--am:#fbbf24;--rd:#fb7185}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe
+UI,Roboto,sans-serif;background:var(--bg);color:var(--tx);min-height:100vh;display:flex;flex-direction:column}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    header{background:rgba(15,23,42,.96);border-bottom:1px solid
+var(--bd);padding:12px
+18px;position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#2563eb);display:flex;align-items:center;justify-content:center;font-size:19px}
+    .badge{font-size:10px;padding:2px
+8px;border-radius:99px;background:#083344;color:#67e8f9;border:1px
+solid rgba(34,211,238,.35);margin-left:6px}
+    .nav,.tabs{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+    .tabs{background:var(--card2);border:1px solid
+var(--bd);border-radius:10px;padding:3px}
+    button,a.btn,label.btn{cursor:pointer;font-family:inherit;border:none;font-size:12px;font-weight:600;border-radius:8px;padding:7px
+11px;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:5px;color:inherit}
+    .tab{background:transparent;color:var(--mu)}.tab.active{background:#0891b2;color:#fff}
+    .btn-sec{background:#1e293b;color:#e2e8f0;border:1px solid
+#334155}.btn-sec:hover{background:#334155}
+    .btn-pri{background:linear-gradient(135deg,#0891b2,#2563eb);color:#fff;box-shadow:0
+4px 12px rgba(8,145,178,.35)}
+    .btn-red{background:#e11d48;color:#fff}.btn-red:hover{background:#be123c}
+    main{max-width:1460px;width:100%;margin:0
+auto;padding:16px;flex:1;display:flex;flex-direction:column;gap:14px}
+    .grid-2{display:grid;grid-template-columns:1fr;gap:14px}
+    .grid-3{display:grid;grid-template-columns:1fr;gap:14px}
+    .grid-even{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:980px){.grid-3{grid-template-columns:1.5fr
+1fr}.grid-even{grid-template-columns:1fr 1fr}}
+    .panel{background:var(--card);border:1px solid
+var(--bd);border-radius:15px;overflow:hidden;display:flex;flex-direction:column}
+    .bar{background:var(--card2);border-bottom:1px solid
+var(--bd);padding:10px
+14px;display:flex;align-items:center;justify-content:space-between;font-size:12px;gap:8px;flex-wrap:wrap}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px}
+    .metric,.tool-box{background:var(--card);border:1px solid
+var(--bd);border-radius:14px;padding:14px}
+    .metric-lbl{font-size:11px;color:var(--mu);margin-bottom:5px}.metric-val{font-size:22px;font-weight:800}
+    .metric-sub{font-size:11px;color:var(--cy);margin-top:8px;padding-top:8px;border-top:1px
+solid var(--bd);display:flex;justify-content:space-between}
+    .roster-item,.list-item{padding:10px
+12px;border-radius:11px;border:1px solid
+var(--bd);background:var(--card2);display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;gap:8px;flex-wrap:wrap}
+    .roster-item{cursor:pointer}.roster-item.sel{border-color:var(--cy);background:#0f172a}
+    .atmo-row{padding:8px 11px;border-radius:9px;border:1px solid
+var(--bd);background:var(--card2);display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}
+    .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+    .orb{width:100px;height:100px;border-radius:50%;margin:10px
+auto;background:linear-gradient(135deg,#0891b2,#4f46e5);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:transform
+1s ease;box-shadow:0 0 22px rgba(34,211,238,.3)}
+    .hidden{display:none!important}
+    .filter-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px;padding-top:10px;border-top:1px
+solid var(--bd)}
+    .f-btn{border:1px solid
+var(--bd);background:var(--card2);color:var(--mu);padding:6px
+11px;border-radius:9px;font-size:12px}
+    .f-btn.on{color:#fff;border-color:var(--cy);background:#0891b2}
+    .f-green.on{background:#059669;border-color:var(--gn)}.f-amber.on{background:#d97706;border-color:var(--am)}.f-red.on{background:#e11d48;border-color:var(--rd)}
+    .cond-card{position:relative;background:var(--card);border:1px
+solid var(--bd);border-radius:14px;overflow:hidden;margin-bottom:9px}
+    .cond-bar{position:absolute;left:0;top:0;bottom:0;width:5px}
+    .t-green{background:var(--gn)}.t-amber{background:var(--am)}.t-red{background:var(--rd)}
+    .cond-head{width:100%;text-align:left;background:transparent;padding:13px
+15px 13px 19px;display:flex;justify-content:space-between;align-items:center;gap:10px;border-radius:0}
+    .cond-head:hover{background:rgba(30,41,59,.45)}
+    .tier-pill{font-size:10px;padding:2px
+8px;border-radius:99px;font-weight:700;display:inline-block;margin-bottom:3px}
+    .tp-green{background:rgba(52,211,153,.15);color:var(--gn);border:1px
+solid rgba(52,211,153,.4)}
+    .tp-amber{background:rgba(251,191,36,.15);color:var(--am);border:1px
+solid rgba(251,191,36,.4)}
+    .tp-red{background:rgba(251,113,133,.15);color:var(--rd);border:1px
+solid rgba(251,113,133,.4)}
+    .cond-body{padding:13px 16px 15px 19px;border-top:1px solid
+var(--bd);background:var(--card2);display:flex;flex-direction:column;gap:10px}
+    .detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+    .detail-box{background:var(--card);border:1px solid
+var(--bd);border-radius:11px;padding:12px;font-size:12.5px;line-height:1.5;color:#cbd5e1}
+    .detail-box
+h4{color:#fff;font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:70;display:flex;align-items:center;justify-content:center;padding:16px}
+    .dialog{background:var(--card);border:1px solid
+rgba(34,211,238,.45);border-radius:15px;width:450px;max-width:100%;padding:18px;display:flex;flex-direction:column;gap:10px}
+    .fab{position:fixed;bottom:18px;right:18px;z-index:60;padding:11px
+16px;border-radius:99px;background:linear-gradient(135deg,#0891b2,#2563eb);color:#fff;box-shadow:0
+10px 24px rgba(8,145,178,.45);border:1px solid rgba(34,211,238,.5)}
+    .modal{position:fixed;bottom:76px;right:18px;width:430px;max-width:calc(100vw
+- 32px);height:620px;max-height:calc(100vh -
+96px);background:var(--card2);border:1px solid
+rgba(34,211,238,.45);border-radius:16px;z-index:60;display:flex;flex-direction:column;overflow:hidden;box-shadow:0
+24px 48px rgba(0,0,0,.85)}
+    .role-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;padding:7px
+10px;background:#0f172a;border-bottom:1px solid var(--bd)}
+    .role-tabs{display:flex;flex-wrap:wrap;gap:4px}
+    .r-btn{background:#1e293b;color:#cbd5e1;font-size:11px;padding:4px
+8px;border-radius:7px;border:1px solid transparent}
+    .r-btn.on{background:#0891b2;color:#fff;border-color:rgba(34,211,238,.5)}
+    .keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;width:215px;margin:10px
+auto}
+    .key{background:#1e293b;color:#fff;padding:9px;font-size:14px;border-radius:9px;justify-content:center}.key:hover{background:#334155}
+    input[type=password],input[type=text],select,textarea{background:#0f172a;border:1px
+solid #334155;color:#fff;border-radius:9px;padding:8px
+11px;font-size:12.5px;outline:none;font-family:inherit}
+    input:focus,select:focus,textarea:focus{border-color:var(--cy)}
+    .msgs{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:9px}
+    .msg{max-width:85%;padding:9px
+12px;border-radius:13px;font-size:12.5px;line-height:1.45;white-space:pre-line}
+    .msg.aura{background:#0f172a;border:1px solid
+var(--bd);align-self:flex-start}
+    .msg.user{background:linear-gradient(135deg,#0891b2,#2563eb);color:#fff;align-self:flex-end}
+    .pills{display:flex;gap:6px;overflow-x:auto;padding:7px
+10px;border-top:1px solid var(--bd);background:#0f172a}
+    .pill{background:#1e293b;color:#cbd5e1;font-size:11px;padding:4px
+9px;border-radius:99px;white-space:nowrap}
+    .chat-form{display:flex;gap:7px;padding:9px;background:var(--card);border-top:1px
+solid var(--bd)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">🛸</div>
+      <div>
+        <div><strong style="font-size:15px;">ARES-74 ×
+CO-ASTRONAUTS</strong><span class="badge mono">All-in-One</span></div>
+        <div class="mono" style="font-size:11px;color:var(--mu);">Sol
+142 • <span id="clock">--:--:-- UTC</span> • ISS <span id="hdr-alt"
+style="color:var(--cy);">418.0 km</span> • Confidential Enclave</div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="tabs">
+        <button id="t-health" class="tab active"
+onclick="setView('health')">🩺 Dashboard</button>
+        <button id="t-guidance" class="tab"
+onclick="setView('guidance')">📋 Health Guidance</button>
+        <button id="t-family" class="tab"
+onclick="setView('family')">🎙️ Voices & Reminders</button>
+        <button id="t-devices" class="tab"
+onclick="setView('devices')">🛠️ 30 Medical Devices</button>
+      </div>
+      <button class="btn-sec" onclick="openCheckin()">🧠 Check-In</button>
+      <button class="btn-pri" onclick="toggleChat(true)"><span
+id="hdr-lock">🔒</span> AURA Chat</button>
+    </div>
+  </header>
+
+  <main>
+    <div id="layout" class="grid-2">
+      <!-- 1. DASHBOARD -->
+      <section id="health-view"
+style="display:flex;flex-direction:column;gap:12px;">
+        <div class="panel"
+style="padding:13px;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;">
+          <div>
+            <div style="font-weight:700;font-size:14px;">ARES-74
+Neuro-Physiological Telemetry</div>
+            <div style="font-size:11.5px;color:var(--mu);">Crew
+Telemetry, 3-Tier Guide, Loved Ones Voices, Vital Reminders & 30
+Devices</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <button class="btn-sec" onclick="openCsvModal()">📂 Load
+NASA CSV</button>
+            <button class="btn-sec" onclick="openFeedModal()">📡 NASA
+Feed</button>
+            <button class="btn-pri" onclick="setView('guidance')">📋
+Health Guidance →</button>
+            <select id="crew-sel" onchange="setCrew(this.value)">
+              <option value="elena">Dr. Elena Vance (AURORA) — Nominal</option>
+              <option value="alex">CDR Alex Mercer (TITAN) — Elevated</option>
+              <option value="marcus">Marcus Chen (KESTREL) — High
+Strain</option>
+              <option value="sarah">Capt. Sarah Lindqvist (VALKYRIE) —
+Mild</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="cards">
+          <div class="metric"><div class="metric-lbl mono">HEART
+RATE</div><div class="metric-val mono" id="v-hr">64 bpm</div><div
+class="metric-sub mono"><span>HRV</span><strong id="v-hrv">78
+ms</strong></div></div>
+          <div class="metric"><div class="metric-lbl mono">STRAIN
+LEVEL</div><div class="metric-val" id="v-str"
+style="color:var(--gn)">Nominal</div><div class="metric-sub
+mono"><span>Cortisol</span><strong
+id="v-cor">Balanced</strong></div></div>
+          <div class="metric"><div class="metric-lbl mono">CIRCADIAN
+SLEEP</div><div class="metric-val mono" id="v-slp">7.2 hrs</div><div
+class="metric-sub mono"><span>Recovery</span><strong
+id="v-rec">88%</strong></div></div>
+          <div class="metric"><div class="metric-lbl mono">O2 &
+DOSIMETRY</div><div class="metric-val mono" id="v-spo">99%</div><div
+class="metric-sub mono"><span id="v-flux">Rad Day /
+Total</span><strong id="v-rad">0.22 / 31.4 mSv</strong></div></div>
+        </div>
+
+        <!-- NASA HRP SPACEFLIGHT DANGERS MONITORS (nasa.gov/hrp/risks) -->
+        <div class="panel" style="padding:14px;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;">
+            <div>
+              <strong style="font-size:13.5px;">🛡️ NASA HRP
+Spaceflight Dangers &amp; Risk Monitors</strong>
+              <div style="font-size:11px;color:var(--mu);">Continuous
+tracking across NASA Human Research Program 5 spaceflight hazards
+&amp; physiological risks</div>
+            </div>
+            <a href="https://www.nasa.gov/hrp/risks/" target="_blank"
+rel="noopener" class="mono"
+style="font-size:11px;color:var(--cy);text-decoration:underline;">nasa.gov/hrp/risks
+↗</a>
+          </div>
+          <div class="cards">
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">SANS (NEURO-OCULAR)</div><div class="metric-val mono"
+style="font-size:17px;" id="v-iop">15 mmHg</div><div class="metric-sub
+mono"><span>Optic Disc</span><strong
+id="v-disc">Nominal</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">BONE LOSS &amp; RENAL</div><div class="metric-val mono"
+style="font-size:17px;" id="v-bone">-0.4% BMD</div><div
+class="metric-sub mono"><span>Stone Risk</span><strong
+id="v-renal">Low</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">MUSCLE &amp; ORTHOSTATIC</div><div class="metric-val mono"
+style="font-size:17px;" id="v-mus">96%</div><div class="metric-sub
+mono"><span>Dynamic Load</span><strong
+id="v-orth">Stable</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">VESTIBULAR BALANCE</div><div class="metric-val mono"
+style="font-size:17px;" id="v-vest">98%</div><div class="metric-sub
+mono"><span>Sensorimotor</span><strong
+id="v-vest-s">Steady</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">IMMUNE &amp; CORE TEMP</div><div class="metric-val mono"
+style="font-size:17px;" id="v-imm">Balanced</div><div
+class="metric-sub mono"><span>Body Temp</span><strong
+id="v-btemp">36.6°C</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">HOST MICROBIOME</div><div class="metric-val mono"
+style="font-size:17px;" id="v-mic">94%</div><div class="metric-sub
+mono"><span>Gut / Skin</span><strong>Monitored</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">DECOMPRESSION (EVA)</div><div class="metric-val mono"
+style="font-size:17px;" id="v-dcs">Low</div><div class="metric-sub
+mono"><span>N2 Washout</span><strong>Ready</strong></div></div>
+            <div class="metric"
+style="padding:11px;background:var(--card2);"><div class="metric-lbl
+mono">TEAMWORK &amp; NUTRITION</div><div class="metric-val mono"
+style="font-size:17px;" id="v-team">95%</div><div class="metric-sub
+mono"><span>Hydration</span><strong
+id="v-nut">96%</strong></div></div>
+          </div>
+        </div>
+
+        <div id="csv-bar" class="panel hidden" style="padding:11px
+14px;border-color:rgba(34,211,238,.35);flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;">
+          <div>
+            <div class="mono"
+style="font-size:10.5px;color:var(--cy);" id="csv-meta">NASA CSV
+DATASET</div>
+            <div style="font-size:12.5px;color:#e2e8f0;"
+id="csv-info">Loaded</div>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;">
+            <button class="btn-sec" onclick="stepCsv(-1)">◀ Prev</button>
+            <button class="btn-pri" id="csv-play-btn"
+onclick="toggleCsvPlay()">▶ Auto-Play (3s)</button>
+            <button class="btn-sec" onclick="stepCsv(1)">Next ▶</button>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <div class="panel" style="padding:14px;">
+            <div
+style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div><strong style="font-size:13.5px;">🧑‍🚀 Active
+Astronaut Roster</strong><div
+style="font-size:11px;color:var(--mu);">Click crew member to sync
+metrics & AURA</div></div>
+              <span class="badge mono" id="roster-cnt">4/4 Live</span>
+            </div>
+            <div id="roster"></div>
+          </div>
+          <div class="panel"
+style="padding:14px;justify-content:space-between;">
+            <div>
+              <div
+style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;gap:6px;">
+                <strong style="font-size:13.5px;">🛰️ Live ISS &amp;
+Space Feed</strong>
+                <span class="badge mono" id="nasa-live-badge"
+style="margin-left:0;">Connecting NASA...</span>
+              </div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">ISS Cabin Pressure</span><strong
+id="a-pres">101.3 kPa</strong></div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">ISS Oxygen (O2)</span><strong id="a-o2"
+style="color:var(--gn);">20.9%</strong></div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">ISS CO2 Level</span><strong id="a-co2"
+style="color:var(--am);">2.8 mmHg</strong></div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">ISS Cabin Temp</span><strong
+id="a-temp">21.0°C</strong></div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">Orbit &amp; Phase</span><strong id="a-orbit"
+style="color:var(--cy);">418 km • Sunlit</strong></div>
+              <div class="atmo-row mono"><span
+style="color:var(--mu);">Space Weather</span><strong id="a-sw"
+style="color:var(--gn);">Kp 1.0 • 0.22 pfu</strong></div>
+              <div id="a-donki"
+style="margin-top:4px;font-size:10.5px;color:#a5f3fc;line-height:1.35;">NASA
+DONKI: Checking solar weather alerts...</div>
+            </div>
+            <div
+style="margin-top:6px;padding:9px;border-radius:9px;background:rgba(8,51,68,.45);border:1px
+solid rgba(34,211,238,.25);font-size:11.5px;color:#a5f3fc;display:flex;flex-wrap:wrap;gap:6px;align-items:center;">
+              <span>Quick Jump:</span>
+              <button onclick="setView('family')" style="padding:3px
+7px;font-size:11px;background:#0891b2;color:#fff;">🎙️ Voices &
+Reminders</button>
+              <button onclick="setView('devices')" style="padding:3px
+7px;font-size:11px;background:#1e293b;color:#fff;">🛠️ 30
+Devices</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="tools">
+          <div class="tool-box" style="text-align:center;">
+            <strong style="font-size:13.5px;">🫁 4-7-8 Breathing Pacer</strong>
+            <div class="orb" id="orb"><span id="p-phase"
+style="font-weight:700;font-size:12.5px;">Ready</span><span id="p-sec"
+class="mono" style="font-size:19px;font-weight:800;">4s</span></div>
+            <div id="p-msg"
+style="font-size:11.5px;color:#a5f3fc;margin-bottom:8px;">Tap Start
+for parasympathetic reset</div>
+            <button class="btn-pri" id="p-btn"
+onclick="togglePacer()">▶ Begin Pacing</button>
+          </div>
+          <div class="tool-box">
+            <strong
+style="font-size:13.5px;display:block;margin-bottom:8px;">🌊 Earth
+Sensory Soundscapes</strong>
+            <div style="display:grid;grid-template-columns:1fr
+1fr;gap:7px;margin-bottom:10px;">
+              <button class="btn-sec" onclick="playSound('ocean')">🌊
+Ocean Swell</button>
+              <button class="btn-sec" onclick="playSound('rain')">🌧️
+Forest Rain</button>
+              <button class="btn-sec" onclick="playSound('hz')">✨ 432
+Hz Calm</button>
+              <button class="btn-sec" onclick="stopSound()"
+style="color:var(--rd);">⏹ Stop Audio</button>
+            </div>
+            <div
+style="font-size:11px;color:var(--mu);line-height:1.45;">Built-in Web
+Audio API synthesizer—works offline with zero external audio
+files.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. HEALTH GUIDANCE (3 COLORS BEST -> WORST + FULL
+EXPLANATION PAGE) -->
+      <section id="guidance-view" class="hidden"
+style="display:flex;flex-direction:column;gap:12px;">
+        <div id="guide-list-wrap">
+          <div class="panel" style="padding:15px;">
+            <div
+style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;">
+              <div>
+                <div style="font-weight:800;font-size:17px;">📋 Health
+Guidance Encyclopedia (Best → Worst)</div>
+                <div
+style="font-size:12px;color:var(--mu);margin-top:3px;">Sorted by 3
+colors: <strong style="color:var(--gn)">Green (Optimal)</strong> →
+<strong style="color:var(--am)">Amber (Caution)</strong> → <strong
+style="color:var(--rd)">Red (Critical)</strong>. Expand any card or
+open its full explanation page.</div>
+              </div>
+              <input id="g-search" type="text" placeholder="Search
+condition or symptom..." oninput="renderGuidance()"
+style="width:240px;max-width:100%;" />
+            </div>
+            <div class="filter-row">
+              <button id="fb-all" class="f-btn on"
+onclick="setTier('all')">All (15) • Best → Worst</button>
+              <button id="fb-green" class="f-btn f-green"
+onclick="setTier('green')">🟢 1. Best / Optimal (5)</button>
+              <button id="fb-amber" class="f-btn f-amber"
+onclick="setTier('amber')">🟡 2. Caution / Moderate (5)</button>
+              <button id="fb-red" class="f-btn f-red"
+onclick="setTier('red')">🔴 3. Worst / Critical (5)</button>
+            </div>
+          </div>
+          <div id="guide-cards" style="margin-top:10px;"></div>
+        </div>
+        <div id="guide-exp-wrap" class="hidden"
+style="display:flex;flex-direction:column;gap:12px;"></div>
+      </section>
+
+      <!-- 3. LOVED ONES VOICE VAULT & VITAL MEASUREMENT RENEWAL REMINDERS -->
+      <section id="family-view" class="hidden">
+        <div class="grid-even">
+          <!-- Voice Vault -->
+          <div class="panel" style="padding:16px;gap:12px;">
+            <div>
+              <div class="mono"
+style="font-size:11px;color:var(--cy);">EARTH CONNECTION • PERSONAL
+AUDIO SANCTUARY</div>
+              <h2
+style="font-size:18px;font-weight:800;margin-top:2px;">🎙️ Loved Ones
+Voice Recordings</h2>
+              <p
+style="font-size:12px;color:var(--mu);margin-top:3px;">Record or
+upload personal voice messages from family, partners, or friends to
+listen whenever you miss home in space.</p>
+            </div>
+            <div style="background:var(--card2);border:1px solid
+var(--bd);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px;">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <input id="v-sender" type="text" placeholder="Name
+(e.g. Mom)" />
+                <select id="v-rel"><option>Family /
+Parent</option><option>Partner /
+Spouse</option><option>Child</option><option>Close
+Friend</option></select>
+              </div>
+              <input id="v-title" type="text" placeholder="Message
+label (e.g. Goodnight from Home)" />
+              <div id="rec-err" class="hidden"
+style="font-size:11.5px;color:var(--am);background:rgba(217,119,6,.15);padding:7px;border-radius:8px;"></div>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                <button id="rec-btn" class="btn-red"
+onclick="toggleRecord()">🎙️ Record Voice Now</button>
+                <label class="btn btn-sec">📤 Upload Audio File<input
+type="file" accept="audio/*" onchange="uploadVoice(event)"
+style="display:none;" /></label>
+              </div>
+            </div>
+            <div id="voice-list"
+style="max-height:340px;overflow-y:auto;"></div>
+          </div>
+
+          <!-- Vital Reminders -->
+          <div class="panel" style="padding:16px;gap:12px;">
+            <div>
+              <div class="mono"
+style="font-size:11px;color:var(--am);">BIOMEDICAL SCHEDULE</div>
+              <h2
+style="font-size:18px;font-weight:800;margin-top:2px;">⏰ Vital
+Measurement Renewal Reminders</h2>
+              <p
+style="font-size:12px;color:var(--mu);margin-top:3px;">Remember when
+to renew heart rate, radiation dosimetry, SpO2, blood pressure, and
+temperature scans.</p>
+            </div>
+            <div id="reminder-list"></div>
+            <form onsubmit="addReminder(event)"
+style="background:var(--card2);border:1px solid
+var(--bd);border-radius:12px;padding:10px;display:flex;flex-wrap:wrap;gap:7px;">
+              <input id="rem-name" type="text" placeholder="Add
+reminder (e.g. Eye Pressure)" style="flex:1;min-width:160px;" />
+              <select id="rem-hrs"><option value="2">Every
+2h</option><option value="4" selected>Every 4h</option><option
+value="6">Every 6h</option><option value="12">Every
+12h</option><option value="24">Every 24h</option></select>
+              <button type="submit" class="btn-pri">+ Add</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 30 SPACE MEDICAL DEVICES GUIDEBOOK & NASA REPORTING -->
+      <section id="devices-view" class="hidden"
+style="display:flex;flex-direction:column;gap:12px;">
+        <div class="panel" style="padding:15px;">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px;">
+            <div>
+              <div class="mono"
+style="font-size:11px;color:var(--cy);">CHECS BIOMEDICAL DIAGNOSTIC
+GUIDEBOOK</div>
+              <h2
+style="font-size:18px;font-weight:800;margin-top:2px;">🛠️ 30
+Most-Used Space Medical Devices & Breakdown Guide</h2>
+              <p
+style="font-size:12px;color:var(--mu);margin-top:3px;">Identify exact
+malfunction signs for all 30 spaceflight medical devices and report
+suspicious units directly to NASA CHeCS.</p>
+            </div>
+            <button class="btn-pri" onclick="downloadGuidebook()">⬇
+Download Full 30-Device Guidebook (.txt)</button>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;padding-top:10px;border-top:1px
+solid var(--bd);">
+            <input id="d-search" type="text" placeholder="Search 30
+devices or breakdown signs..." oninput="renderDevices()"
+style="flex:1;min-width:220px;" />
+            <select id="d-cat" onchange="renderDevices()"></select>
+          </div>
+        </div>
+
+        <div id="nasa-log-box" class="panel hidden"
+style="padding:14px;border-color:rgba(251,191,36,.45);background:rgba(120,53,15,.18);">
+          <strong
+style="color:var(--am);font-size:13px;display:block;margin-bottom:8px;">🚨
+Submitted NASA CHeCS Hardware Inspection Reports</strong>
+          <div id="nasa-log-list"
+style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px;"></div>
+        </div>
+
+        <div id="device-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- CHECK-IN MODAL -->
+  <div id="checkin-modal" class="overlay hidden">
+    <div class="dialog">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><strong>🧠
+Daily Psychological Check-In</strong><button class="btn-sec"
+onclick="closeCheckin()" style="padding:4px 8px;">✕</button></div>
+      <div style="font-size:12px;color:var(--mu);">How is <strong
+id="chk-name" style="color:var(--cy);">Dr. Elena Vance</strong>
+feeling?</div>
+      <button class="btn-sec"
+onclick="applyCheckin('Nominal','Balanced','var(--gn)','green')"
+style="justify-content:space-between;"><span>🟢 Calm, Focused &
+Rested</span><span>Best</span></button>
+      <button class="btn-sec" onclick="applyCheckin('Elevated','Mild
+Spike','var(--am)','amber')"
+style="justify-content:space-between;"><span>🟡 Stressed / Sleep Debt
+/ Anxious</span><span>Caution</span></button>
+      <button class="btn-sec" onclick="applyCheckin('High
+Strain','Spike','var(--rd)','red')"
+style="justify-content:space-between;"><span>🔴 Exhausted / Panic /
+Crisis</span><span>Critical</span></button>
+    </div>
+  </div>
+
+  <!-- NASA HARDWARE REPORT MODAL -->
+  <div id="nasa-modal" class="overlay hidden">
+    <form class="dialog" onsubmit="submitNasaReport(event)"
+style="border-color:rgba(251,113,133,.5);">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div class="mono"
+style="font-size:10px;color:var(--rd);">NASA CHECS ANOMALY
+DISPATCH</div><strong id="nr-title">Device</strong></div>
+        <button type="button" class="btn-sec"
+onclick="closeNasaModal()" style="padding:4px 8px;">✕</button>
+      </div>
+      <input id="nr-loc" type="text" value="Columbus Lab — CHeCS Rack
+2" placeholder="Module / Bay Location" />
+      <select id="nr-sev"><option>Suspected Calibration
+Drift</option><option>Intermittent Sensor
+Failure</option><option>Broken Down — Do Not Use</option></select>
+      <textarea id="nr-sym" rows="3" placeholder="Describe observed
+fault symptoms..."></textarea>
+      <div style="display:flex;justify-content:flex-end;gap:8px;">
+        <button type="button" class="btn-sec"
+onclick="closeNasaModal()">Cancel</button>
+        <button type="submit" class="btn-red">🚨 Submit to NASA</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- NASA TELEMETRY REST / WEBSOCKET ADAPTER MODAL -->
+  <div id="feed-modal" class="overlay hidden">
+    <form class="dialog" onsubmit="connectTelemetryFeed(event)">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div class="mono"
+style="font-size:10px;color:var(--cy);">LIVE NASA TELEMETRY
+ADAPTER</div><strong>📡 NASA Live Stream</strong></div>
+        <button type="button" class="btn-sec"
+onclick="closeFeedModal()" style="padding:4px 8px;">✕</button>
+      </div>
+      <div style="font-size:12px;color:var(--mu);line-height:1.45;">Built-in
+stream pulls live <strong>NASA ISSLIVE</strong> cabin
+pressure/O2/CO2/temp, <strong>ISS Orbit</strong>, <strong>GOES Proton
+Flux</strong>, and <strong>NASA DONKI</strong> alerts automatically.
+Or enter any custom REST (<code>http://</code>) or WebSocket
+(<code>ws://</code>) URL below:</div>
+      <input id="feed-url" type="text"
+value="ws://localhost:8080/telemetry/stream" placeholder="http://...
+or ws://..." />
+      <div id="feed-note" class="mono"
+style="font-size:11px;color:var(--cy);">Built-in Live NASA Feed
+active.</div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;">
+        <button type="button" class="btn-sec"
+onclick="startBuiltInNasaFeed();closeFeedModal()">🛰️ Use Built-in
+NASA Stream</button>
+        <button type="submit" class="btn-pri">Connect Custom URL</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- NASA CSV DATASET LOADER MODAL -->
+  <div id="csv-modal" class="overlay hidden">
+    <div class="dialog">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div><div class="mono"
+style="font-size:10px;color:var(--cy);">NASA CSV DATASET
+IMPORTER</div><strong>📂 Load NASA .CSV File</strong></div>
+        <button type="button" class="btn-sec"
+onclick="closeCsvModal()" style="padding:4px 8px;">✕</button>
+      </div>
+      <div style="font-size:12px;color:var(--mu);line-height:1.45;">Upload
+any downloaded <code>.csv</code> file from NASA OSDR,
+<code>data.nasa.gov</code>, or Kaggle—or click below to load the
+official public NASA Astronauts CSV directly.</div>
+      <label class="btn btn-sec"
+style="justify-content:center;padding:11px;">📤 Choose .CSV File from
+Computer<input type="file" accept=".csv,text/csv"
+onchange="handleCsvFile(event)" style="display:none;" /></label>
+      <button type="button" class="btn-pri"
+style="justify-content:center;padding:10px;"
+onclick="loadOnlineNasaCsv()">🚀 Load Public NASA Astronauts CSV
+Now</button>
+      <button type="button" class="btn-sec"
+style="justify-content:center;padding:9px;"
+onclick="downloadHrpCsvTemplate()">⬇ Download NASA HRP Telemetry CSV
+Template</button>
+      <div id="csv-status" class="mono"
+style="font-size:11px;color:var(--cy);">Ready to import CSV
+rows.</div>
+    </div>
+  </div>
+
+  <!-- FLOATING AURA CHAT -->
+  <button class="fab" onclick="toggleChat()">🛡️ <strong>AURA
+Care</strong> (PIN)</button>
+  <div id="aura-box" class="modal hidden">
+    <div class="bar">
+      <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;"><strong>🤖
+AURA</strong> <span class="badge mono" id="aura-role-badge"
+style="margin-left:0;">Care Psychologist</span> <span class="badge
+mono" id="aura-ai-status"
+style="margin-left:0;background:#0f172a;color:#94a3b8;border-color:#334155;">AI
+Ready</span></div>
+      <div style="display:flex;gap:6px;">
+        <button id="wipe-btn" class="hidden btn-sec"
+onclick="clearChatHistory()" style="padding:4px 8px;font-size:11px;"
+title="Wipe Session Memory">🗑️</button>
+        <button id="panic-btn" class="hidden btn-red"
+onclick="lockChat()" style="padding:4px 8px;font-size:11px;">🔒
+Lock</button>
+        <button class="btn-sec" onclick="toggleChat(false)"
+style="padding:4px 8px;">✕</button>
+      </div>
+    </div>
+    <div id="lock-ui"
+style="padding:18px;text-align:center;flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+      <div style="font-size:26px;margin-bottom:6px;">🔒</div>
+      <strong>Confidential Astronaut Safehouse</strong>
+      <div style="font-size:12px;color:var(--mu);margin:4px 0
+10px;">Demo PIN: <strong style="color:var(--cy);">1969</strong></div>
+      <input id="pin-in" type="password" maxlength="6"
+placeholder="PIN (1969)"
+style="text-align:center;width:200px;letter-spacing:4px;" />
+      <div id="pin-err" class="hidden"
+style="color:var(--rd);font-size:11px;margin-top:5px;">Wrong PIN. Try
+1969.</div>
+      <div class="keypad">
+        <button class="key" onclick="addK('1')">1</button><button
+class="key" onclick="addK('2')">2</button><button class="key"
+onclick="addK('3')">3</button>
+        <button class="key" onclick="addK('4')">4</button><button
+class="key" onclick="addK('5')">5</button><button class="key"
+onclick="addK('6')">6</button>
+        <button class="key" onclick="addK('7')">7</button><button
+class="key" onclick="addK('8')">8</button><button class="key"
+onclick="addK('9')">9</button>
+        <button class="key" onclick="clrK()"
+style="font-size:11px;">CLR</button><button class="key"
+onclick="addK('0')">0</button><button class="key" onclick="autoK()"
+style="font-size:11px;color:var(--cy);">AUTO</button>
+      </div>
+      <button class="btn-pri"
+style="width:215px;justify-content:center;padding:9px;"
+onclick="unlockChat()">🔓 Unlock AURA</button>
+    </div>
+    <div id="chat-ui" class="hidden"
+style="flex:1;display:flex;flex-direction:column;overflow:hidden;">
+      <div class="role-bar">
+        <div class="role-tabs">
+          <button type="button" id="rb-psychologist" class="r-btn on"
+onclick="setChatRole('psychologist')">💙 Psychologist</button>
+          <button type="button" id="rb-flight_surgeon" class="r-btn"
+onclick="setChatRole('flight_surgeon')">🩺 Flight Surgeon</button>
+          <button type="button" id="rb-mission_ops" class="r-btn"
+onclick="setChatRole('mission_ops')">🧭 Ops Copilot</button>
+        </div>
+        <select id="chat-mode" aria-label="Response depth"
+style="padding:4px 7px;font-size:11px;">
+          <option value="auto">Auto</option>
+          <option value="fast">Fast</option>
+          <option value="general">Balanced</option>
+          <option value="deep">Deep</option>
+        </select>
+      </div>
+      <div class="msgs" id="msgs"></div>
+      <div class="pills" id="chat-pills"></div>
+      <form class="chat-form" onsubmit="sendMsg(event)">
+        <input id="chat-in" type="text" placeholder="Type confidential
+message..." style="flex:1;" />
+        <button type="submit" class="btn-pri" id="chat-send">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    setInterval(()=>{document.getElementById('clock').innerText=new
+Date().toUTCString().slice(17,25)+' UTC'},1000);
+    function setView(v){
+      const h=document.getElementById('health-view'),g=document.getElementById('guidance-view'),f=document.getElementById('family-view'),d=document.getElementById('devices-view');
+      ['health','guidance','family','devices'].forEach(k=>document.getElementById('t-'+k).classList.toggle('active',k===v));
+      h.style.display=v==='health'?'flex':'none';
+      g.classList.toggle('hidden',v!=='guidance');
+      f.classList.toggle('hidden',v!=='family');
+      d.classList.toggle('hidden',v!=='devices');
+    }
+
+    const CREW={
+      elena:{name:'Dr. Elena Vance',role:'Payload Specialist &
+Physician',tag:'AURORA',hr:'64 bpm',hrv:'78
+ms',str:'Nominal',col:'var(--gn)',cor:'Balanced',slp:'7.2
+hrs',rec:'88%',spo:'99%',rad:'0.22 / 31.4 mSv',iop:'15
+mmHg',disc:'Nominal',bone:'-0.4%
+BMD',renal:'Low',mus:'96%',orth:'Stable',vest:'98%',imm:'Balanced',btemp:'36.6°C',mic:'94%',dcs:'Low',team:'95%',nut:'96%'},
+      alex:{name:'CDR Alex Mercer',role:'Mission
+Commander',tag:'TITAN',hr:'74 bpm',hrv:'61
+ms',str:'Elevated',col:'var(--am)',cor:'Balanced',slp:'6.4
+hrs',rec:'74%',spo:'98%',rad:'0.28 / 38.9 mSv',iop:'19
+mmHg',disc:'Borderline',bone:'-1.1%
+BMD',renal:'Moderate',mus:'89%',orth:'Mild
+Shift',vest:'91%',imm:'Balanced',btemp:'36.8°C',mic:'88%',dcs:'Low',team:'87%',nut:'88%'},
+      marcus:{name:'Marcus Chen',role:'Lead Flight
+Engineer',tag:'KESTREL',hr:'85 bpm',hrv:'46 ms',str:'High
+Strain',col:'var(--rd)',cor:'Spike',slp:'4.8
+hrs',rec:'Fatigued',spo:'97%',rad:'0.33 / 44.2 mSv',iop:'22
+mmHg',disc:'Borderline',bone:'-1.8%
+BMD',renal:'Elevated',mus:'81%',orth:'Mild
+Shift',vest:'79%',imm:'Reactive',btemp:'37.1°C',mic:'76%',dcs:'Caution',team:'74%',nut:'72%'},
+      sarah:{name:'Capt. Sarah Lindqvist',role:'EVA Specialist &
+Robotics',tag:'VALKYRIE',hr:'68 bpm',hrv:'72
+ms',str:'Mild',col:'var(--cy)',cor:'Balanced',slp:'7.5
+hrs',rec:'91%',spo:'99%',rad:'0.25 / 34.6 mSv',iop:'16
+mmHg',disc:'Nominal',bone:'-0.7%
+BMD',renal:'Low',mus:'94%',orth:'Stable',vest:'96%',imm:'Balanced',btemp:'36.7°C',mic:'92%',dcs:'Caution',team:'93%',nut:'91%'}
+    };
+    let crewKey='elena',crew=CREW.elena;
+    function setCrew(k){
+      if(!CREW[k])return;
+      const changed=crewKey!==k;
+      crewKey=k;crew=CREW[k];document.getElementById('crew-sel').value=k;
+      document.getElementById('v-hr').innerText=crew.hr;document.getElementById('v-hrv').innerText=crew.hrv;
+      const s=document.getElementById('v-str');s.innerText=crew.str;s.style.color=crew.col;
+      document.getElementById('v-cor').innerText=crew.cor;document.getElementById('v-slp').innerText=crew.slp;
+      document.getElementById('v-rec').innerText=crew.rec;document.getElementById('v-spo').innerText=crew.spo;
+      document.getElementById('v-rad').innerText=crew.rad;
+      document.getElementById('v-iop').innerText=crew.iop||'15
+mmHg';document.getElementById('v-disc').innerText=crew.disc||'Nominal';
+      document.getElementById('v-bone').innerText=crew.bone||'-0.4%
+BMD';document.getElementById('v-renal').innerText=crew.renal||'Low';
+      document.getElementById('v-mus').innerText=crew.mus||'96%';document.getElementById('v-orth').innerText=crew.orth||'Stable';
+      document.getElementById('v-vest').innerText=crew.vest||'98%';document.getElementById('v-imm').innerText=crew.imm||'Balanced';
+      document.getElementById('v-btemp').innerText=crew.btemp||'36.6°C';document.getElementById('v-mic').innerText=crew.mic||'94%';
+      document.getElementById('v-dcs').innerText=crew.dcs||'Low';document.getElementById('v-team').innerText=crew.team||'95%';
+      document.getElementById('v-nut').innerText=crew.nut||'96%';
+      renderRoster();
+      if(changed&&typeof unlocked!=='undefined'&&unlocked&&typeof
+loadChatHistory==='function')loadChatHistory();
+    }
+    function syncCrewSelect(){
+      document.getElementById('crew-sel').innerHTML=Object.keys(CREW).map(k=>`<option
+value="${k}">${CREW[k].name} (${CREW[k].tag}) —
+${CREW[k].str}</option>`).join('');
+    }
+    function renderRoster(){
+      const ks=Object.keys(CREW);
+      document.getElementById('roster-cnt').innerText=`${ks.length} Live`;
+      document.getElementById('roster').innerHTML=ks.slice(0,25).map(k=>{const
+c=CREW[k];
+        return `<div class="roster-item ${k===crewKey?'sel':''}"
+onclick="setCrew('${k}')"><div><strong style="font-size:13px;">🧑‍🚀
+${c.name}</strong><span class="badge mono">${c.tag}</span><div
+style="font-size:11px;color:var(--mu);">${c.role}</div></div><div
+class="mono" style="text-align:right;font-size:11.5px;"><div>${c.hr}</div><strong
+style="color:${c.col};">${c.str}</strong></div></div>`;
+      }).join('');
+    }
+    renderRoster();
+
+    // NASA CSV DATASET IMPORTER & PLAYBACK
+    let csvRows=[],csvIdx=0,csvTimer=null;
+    function openCsvModal(){document.getElementById('csv-modal').classList.remove('hidden')}
+    function closeCsvModal(){document.getElementById('csv-modal').classList.add('hidden')}
+    function splitCsvLine(line){
+      const out=[];let cur='',q=false;
+      for(let i=0;i<line.length;i++){
+        const ch=line[i];
+        if(ch==='"'){q=!q}else
+if(ch===','&&!q){out.push(cur.trim());cur=''}else{cur+=ch}
+      }
+      out.push(cur.trim());return out;
+    }
+    function pickVal(row,keys){for(const k of
+keys){if(row[k]!==undefined&&row[k]!=='')return row[k]}return
+undefined}
+    function applyCsvRow(idx){
+      if(!csvRows.length)return;
+      csvIdx=((idx%csvRows.length)+csvRows.length)%csvRows.length;
+      const r=csvRows[csvIdx];
+      const name=pickVal(r,['name','astronaut','crew','crew_name']);
+      if(name){
+        const id='csv_'+name.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,14);
+        if(CREW[id]){crewKey=id;crew=CREW[id]}
+      }
+      const d={
+        hr:pickVal(r,['hr','heart_rate','bpm','pulse']),
+        hrv:pickVal(r,['hrv']),
+        spo2:pickVal(r,['spo2','oxygen','o2_sat']),
+        rad:pickVal(r,['rad','radiation','dose','msv']),
+        cumRad:pickVal(r,['cum_rad','cumulative_rad']),
+        sleep:pickVal(r,['sleep','sleep_hrs','sleep_hours']),
+        recovery:pickVal(r,['recovery']),
+        iop:pickVal(r,['ocular_iop','iop','ocular']),
+        bone:pickVal(r,['bone_delta','bmd','bone']),
+        renal:pickVal(r,['renal_risk','renal']),
+        muscle:pickVal(r,['muscle','muscle_index']),
+        vestibular:pickVal(r,['vestibular','balance']),
+        immune:pickVal(r,['immune']),
+        microbiome:pickVal(r,['microbiome']),
+        dcs:pickVal(r,['dcs_risk','decomp','dcs']),
+        team:pickVal(r,['team','cohesion']),
+        nutrition:pickVal(r,['nutrition','hydration']),
+        co2:pickVal(r,['co2']),
+        o2:pickVal(r,['o2']),
+        pressure:pickVal(r,['pressure']),
+        temp:pickVal(r,['temp','temperature'])
+      };
+      if(Object.values(d).some(v=>v!==undefined)){applyLiveTelemetry(d)}else{setCrew(crewKey)}
+      const mis=pickVal(r,['mission_title','mission','missions','occupation'])||'Flight
+Record';
+      const hrs=pickVal(r,['hours_mission','total_hrs_sum','space
+flight (hr)']);
+      const eva=pickVal(r,['eva_hrs_mission','total_eva_hrs','space
+walks (hr)']);
+      const yr=pickVal(r,['year_of_mission','year']);
+      document.getElementById('csv-meta').innerText=`NASA CSV ROW
+${csvIdx+1} OF ${csvRows.length}`;
+      document.getElementById('csv-info').innerText=[name||crew.name,mis,yr?`Year
+${yr}`:'',hrs?`${hrs}h flight`:'',eva?`${eva}h
+EVA`:''].filter(Boolean).join(' • ');
+    }
+    function loadCsvText(txt,srcName){
+      const lines=txt.split(/\r?\n/).filter(l=>l.trim());
+      if(lines.length<2){document.getElementById('csv-status').innerText='CSV
+appears empty.';return}
+      const hdr=splitCsvLine(lines[0]).map(h=>h.toLowerCase().replace(/^"|"$/g,'').trim());
+      csvRows=lines.slice(1).map(l=>{const
+vals=splitCsvLine(l),obj={};hdr.forEach((h,i)=>obj[h]=(vals[i]||'').replace(/^"|"$/g,''));return
+obj});
+      let added=0;
+      csvRows.forEach(r=>{
+        const name=pickVal(r,['name','astronaut','crew','crew_name']);
+        if(!name||added>=25)return;
+        const id='csv_'+name.toLowerCase().replace(/[^a-z0-9]/g,'').slice(0,14);
+        if(!CREW[id]){
+          const nat=pickVal(r,['nationality','agency','selection'])||'NASA';
+          const
+mis=pickVal(r,['mission_title','mission','occupation','role'])||'Spaceflight
+Crew';
+          const
+eva=Number(pickVal(r,['eva_hrs_mission','total_eva_hrs','space walks
+(hr)'])||0);
+          CREW[id]={
+            name,role:`${mis} • ${nat}`,tag:nat.toUpperCase().slice(0,8),
+            hr:pickVal(r,['hr','heart_rate','bpm'])?pickVal(r,['hr','heart_rate','bpm'])+'
+bpm':'68 bpm',
+            hrv:pickVal(r,['hrv'])?pickVal(r,['hrv'])+' ms':'72 ms',
+            str:eva>15?'Elevated':'Nominal',col:eva>15?'var(--am)':'var(--gn)',cor:'Balanced',
+            slp:pickVal(r,['sleep','sleep_hrs'])?pickVal(r,['sleep','sleep_hrs'])+'
+hrs':'7.0 hrs',
+            rec:'85%',spo:pickVal(r,['spo2'])?pickVal(r,['spo2'])+'%':'99%',
+            rad:pickVal(r,['rad','dose'])?pickVal(r,['rad','dose'])+'
+mSv':'0.24 / 32.0 mSv',
+            iop:'16 mmHg',disc:'Nominal',bone:'-0.5%
+BMD',renal:'Low',mus:'95%',orth:'Stable',vest:'97%',imm:'Balanced',btemp:'36.6°C',mic:'93%',dcs:'Low',team:'94%',nut:'95%'
+          };
+          added++;
+        }
+      });
+      syncCrewSelect();
+      document.getElementById('csv-bar').classList.remove('hidden');
+      document.getElementById('csv-status').innerText=`Loaded
+${csvRows.length} rows from ${srcName}.`;
+      applyCsvRow(0);
+      closeCsvModal();
+    }
+    function handleCsvFile(e){
+      const f=e.target.files[0];if(!f)return;
+      const r=new
+FileReader();r.onload=ev=>loadCsvText(ev.target.result,f.name);r.readAsText(f);e.target.value='';
+    }
+    async function loadOnlineNasaCsv(){
+      const st=document.getElementById('csv-status');st.innerText='Fetching
+public NASA astronauts.csv...';
+      try{
+        const res=await
+fetch('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-07-14/astronauts.csv');
+        if(!res.ok)throw new Error('HTTP '+res.status);
+        loadCsvText(await res.text(),'NASA astronauts.csv');
+      }catch(err){st.innerText='Could not reach GitHub — download the
+CSV and upload it above.'}
+    }
+    function downloadHrpCsvTemplate(){
+      const csv='name,mission_title,hr,hrv,spo2,rad,cum_rad,sleep,ocular_iop,bone_delta,renal_risk,muscle,vestibular,immune,microbiome,dcs_risk,team,nutrition,co2,o2,pressure,temp\nDr.
+Elena Vance,ARES-74 Sol
+142,64,78,99,0.22,31.4,7.2,15,-0.4,Low,96,98,Balanced,94,Low,95,96,2.8,20.9,101.3,21.0\nCDR
+Alex Mercer,ARES-74 Sol
+142,74,61,98,0.28,38.9,6.4,19,-1.1,Moderate,89,91,Balanced,88,Low,87,88,3.0,20.8,101.2,21.2';
+      const a=document.createElement('a');a.href=URL.createObjectURL(new
+Blob([csv],{type:'text/csv'}));a.download='NASA-HRP-Risk-Monitoring-Template.csv';a.click();
+    }
+    function stepCsv(delta){applyCsvRow(csvIdx+delta)}
+    function toggleCsvPlay(){
+      const btn=document.getElementById('csv-play-btn');
+      if(csvTimer){clearInterval(csvTimer);csvTimer=null;btn.innerText='▶
+Auto-Play (3s)';return}
+      btn.innerText='⏸ Pause Stream';csvTimer=setInterval(()=>stepCsv(1),3000);
+    }
+
+    // NASA LIVE STREAM + CUSTOM REST / WEBSOCKET TELEMETRY ADAPTER
+    let feedPoll=null,feedWs=null,issAc=null,nasaOrbitTimer=null,nasaSwTimer=null;
+    function openFeedModal(){document.getElementById('feed-modal').classList.remove('hidden')}
+    function closeFeedModal(){document.getElementById('feed-modal').classList.add('hidden')}
+    function applyLiveTelemetry(d){
+      if(!d||typeof d!=='object')return;
+      const target=CREW[d.crewId]||crew;
+      if(d.hr!==undefined)target.hr=`${d.hr} bpm`;
+      if(d.hrv!==undefined)target.hrv=`${d.hrv} ms`;
+      if(d.spo2!==undefined)target.spo=`${d.spo2}%`;
+      if(d.rad!==undefined)target.rad=d.cumRad?`${d.rad} / ${d.cumRad}
+mSv`:`${d.rad} mSv`;
+      if(d.sleep!==undefined)target.slp=`${d.sleep} hrs`;
+      if(d.recovery!==undefined)target.rec=`${d.recovery}%`;
+      if(d.iop!==undefined)target.iop=`${d.iop} mmHg`;
+      if(d.bone!==undefined)target.bone=String(d.bone).includes('%')?d.bone:`${d.bone}%
+BMD`;
+      if(d.renal!==undefined)target.renal=d.renal;
+      if(d.muscle!==undefined)target.mus=`${d.muscle}%`;
+      if(d.vestibular!==undefined)target.vest=`${d.vestibular}%`;
+      if(d.immune!==undefined)target.imm=d.immune;
+      if(d.microbiome!==undefined)target.mic=`${d.microbiome}%`;
+      if(d.dcs!==undefined)target.dcs=d.dcs;
+      if(d.team!==undefined)target.team=`${d.team}%`;
+      if(d.nutrition!==undefined)target.nut=`${d.nutrition}%`;
+      if(d.strain!==undefined){
+        target.str=d.strain;
+        target.col=d.strain==='High
+Strain'?'var(--rd)':d.strain==='Elevated'?'var(--am)':'var(--gn)';
+      }
+      if(d.cortisol!==undefined)target.cor=d.cortisol;
+      if(d.pressure!==undefined)document.getElementById('a-pres').innerText=`${d.pressure}
+kPa`;
+      if(d.o2!==undefined)document.getElementById('a-o2').innerText=`${d.o2}%`;
+      if(d.co2!==undefined)document.getElementById('a-co2').innerText=`${d.co2}
+mmHg`;
+      if(d.temp!==undefined)document.getElementById('a-temp').innerText=`${d.temp}°C`;
+      if(d.altitudeKm!==undefined){
+        const vis=d.visibility==='daylight'?'Sunlit':'Eclipse';
+        document.getElementById('hdr-alt').innerText=`${d.altitudeKm} km`;
+        document.getElementById('a-orbit').innerText=`${d.altitudeKm}
+km • ${vis}`;
+      }
+      if(d.protonFlux!==undefined||d.kpIndex!==undefined){
+        const kp=d.kpIndex!==undefined?d.kpIndex:1.0;
+        const fl=d.protonFlux!==undefined?d.protonFlux:0.22;
+        document.getElementById('a-sw').innerText=`Kp ${kp} • ${fl} pfu`;
+        document.getElementById('v-flux').innerText=`GOES ${fl} pfu • Rad`;
+      }
+      if(d.donkiAlert){document.getElementById('a-donki').innerText='NASA
+DONKI: '+d.donkiAlert}
+      setCrew(crewKey);
+    }
+    function disconnectTelemetryFeed(){
+      if(feedPoll){clearInterval(feedPoll);feedPoll=null}
+      if(nasaOrbitTimer){clearInterval(nasaOrbitTimer);nasaOrbitTimer=null}
+      if(nasaSwTimer){clearInterval(nasaSwTimer);nasaSwTimer=null}
+      if(issAc){try{issAc.abort()}catch(e){}issAc=null}
+      if(feedWs){try{feedWs.close()}catch(e){}feedWs=null}
+      document.getElementById('feed-note').innerText='Disconnected —
+using local crew profile presets.';
+    }
+    async function startIssLiveStream(){
+      const raw={};
+      while(issAc&&!issAc.signal.aborted){
+        try{
+          const res=await
+fetch('https://push.lightstreamer.com/lightstreamer/create_session.txt?LS_protocol=TLCP-2.1.0',{
+            method:'POST',signal:issAc.signal,
+            headers:{'Content-Type':'application/x-www-form-urlencoded'},
+            body:'LS_adapter_set=ISSLIVE&LS_cid=mgQkwtwdysogQz2BJ4Ji%20kOj2Bg'
+          });
+          if(!res.ok||!res.body)throw new Error('ISSLIVE');
+          const reader=res.body.getReader(),dec=new TextDecoder();
+          let buf='',sub=false;
+          while(true){
+            const {value,done}=await reader.read();
+            if(done)break;
+            buf+=dec.decode(value,{stream:true});
+            const lines=buf.split(/\r?\n/);buf=lines.pop()||'';
+            for(const line of lines){
+              if(!sub&&line.startsWith('CONOK,')){
+                sub=true;
+                const sid=line.split(',')[1];
+
+fetch('https://push.lightstreamer.com/lightstreamer/control.txt?LS_protocol=TLCP-2.1.0',{
+                  method:'POST',signal:issAc.signal,
+                  headers:{'Content-Type':'application/x-www-form-urlencoded'},
+
+body:'LS_session='+encodeURIComponent(sid)+'&LS_reqId=1&LS_op=add&LS_subId=1&LS_mode=MERGE&LS_group=USLAB000058%20USLAB000059%20USLAB000053%20USLAB000055&LS_schema=Value&LS_data_adapter=DEFAULT&LS_snapshot=true'
+                }).catch(()=>{});
+              }else if(line.startsWith('U,1,')){
+                const p=line.split(','),idx=Number(p[2]),val=parseFloat(p[3]);
+                if(!Number.isNaN(val)){
+                  raw[idx]=val;
+                  const upd={};
+                  if(raw[1])upd.pressure=+(raw[1]*0.133322).toFixed(2);
+                  if(raw[2])upd.temp=+raw[2].toFixed(1);
+                  if(raw[3]&&raw[1])upd.o2=+((raw[3]/raw[1])*100).toFixed(1);
+                  if(raw[4])upd.co2=+raw[4].toFixed(2);
+                  applyLiveTelemetry(upd);
+
+document.getElementById('nasa-live-badge').innerText='LIVE ISS +
+NASA';
+                  document.getElementById('feed-note').innerText='Live
+NASA ISSLIVE + Orbit + Space Weather streaming.';
+                }
+              }
+            }
+          }
+        }catch(e){}
+        if(!issAc||issAc.signal.aborted)break;
+        await new Promise(r=>setTimeout(r,5000));
+      }
+    }
+    function startBuiltInNasaFeed(){
+      disconnectTelemetryFeed();
+      if(typeof AbortController!=='undefined'){issAc=new
+AbortController();startIssLiveStream()}
+      const pullOrbit=async()=>{
+        try{
+          const r=await
+fetch('https://api.wheretheiss.at/v1/satellites/25544',{cache:'no-store'});
+          if(!r.ok)return;
+          const d=await r.json();
+          applyLiveTelemetry({altitudeKm:+d.altitude.toFixed(1),visibility:d.visibility});
+          const
+b=document.getElementById('nasa-live-badge');if(b.innerText==='Connecting
+NASA...')b.innerText='LIVE NASA ORBIT';
+        }catch(e){}
+      };
+      const pullSpaceWeather=async()=>{
+        try{
+          const [pr,kpR,dkR]=await Promise.all([
+            fetch('https://services.swpc.noaa.gov/json/goes/primary/integral-protons-plot-6-hour.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+            fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),
+            fetch('https://api.nasa.gov/DONKI/notifications?type=all&api_key=DEMO_KEY',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)
+          ]);
+          const upd={};
+          if(Array.isArray(pr)&&pr.length){
+            const p10=[...pr].reverse().find(x=>x.energy==='>=10
+MeV')||pr[pr.length-1];
+            if(p10&&typeof
+p10.flux==='number')upd.protonFlux=+p10.flux.toFixed(2);
+          }
+          if(Array.isArray(kpR)&&kpR.length>1){
+            const last=kpR[kpR.length-1],kv=parseFloat(last?.Kp??last?.[1]);
+            if(!Number.isNaN(kv))upd.kpIndex=+kv.toFixed(1);
+          }
+          if(Array.isArray(dkR)&&dkR.length){
+            const
+top=dkR[0],dt=(top.messageIssueTime||'').slice(0,10),bd=String(top.messageBody||'');
+            const m=bd.match(/##\s*Summary:\s*([\s\S]*?)(?:\n##|$)/i);
+            const
+sum=(m?m[1]:(bd.split(/\r?\n/).find(l=>l.trim().length>25&&!l.startsWith('#'))||'')).replace(/\s+/g,'
+').trim();
+            upd.donkiAlert=`${top.messageType||'ALERT'} (${dt}):
+${sum.slice(0,140)}`;
+          }
+          if(Object.keys(upd).length)applyLiveTelemetry(upd);
+        }catch(e){}
+      };
+      pullOrbit();pullSpaceWeather();
+      nasaOrbitTimer=setInterval(pullOrbit,5000);
+      nasaSwTimer=setInterval(pullSpaceWeather,60000);
+    }
+    startBuiltInNasaFeed();
+    function connectTelemetryFeed(e){
+      if(e)e.preventDefault();
+      disconnectTelemetryFeed();
+      const url=document.getElementById('feed-url').value.trim();
+      const note=document.getElementById('feed-note');
+      if(!url)return;
+      if(url.startsWith('ws://')||url.startsWith('wss://')){
+        try{
+          feedWs=new WebSocket(url);
+          feedWs.onopen=()=>{note.innerText='Connected via WebSocket
+stream.';closeFeedModal()};
+          feedWs.onmessage=m=>{try{applyLiveTelemetry(JSON.parse(m.data))}catch(err){}};
+          feedWs.onerror=()=>{note.innerText='Unable to reach
+WebSocket endpoint — staying on presets.'};
+        }catch(err){note.innerText='WebSocket connection failed —
+staying on presets.'}
+      }else{
+        const pull=async()=>{
+          try{
+            const res=await fetch(url,{cache:'no-store'});
+            if(!res.ok)throw new Error('HTTP '+res.status);
+            applyLiveTelemetry(await res.json());
+            note.innerText='Live REST polling active.';
+          }catch(err){note.innerText='REST endpoint unreachable —
+keeping current presets.'}
+        };
+        pull();
+        feedPoll=setInterval(pull,3000);
+      }
+    }
+
+    function openCheckin(){document.getElementById('chk-name').innerText=crew.name;document.getElementById('checkin-modal').classList.remove('hidden')}
+    function closeCheckin(){document.getElementById('checkin-modal').classList.add('hidden')}
+    function applyCheckin(str,cor,col,tier){crew.str=str;crew.cor=cor;crew.col=col;setCrew(crewKey);closeCheckin();setView('guidance');setTier(tier)}
+
+    // 15 CONDITIONS SORTED BEST -> WORST
+    const CONDITIONS=[
+      {id:'g1',r:1,tier:'green',cat:'Cardiovascular',title:'Optimal
+Autonomic & Sinus Rhythm',sum:'Balanced resting HR, strong HRV
+recovery, stable blood pressure.',vit:'HR 55-72 bpm • HRV &gt; 65
+ms',sym:['Steady energy across duty','Fast exercise recovery','Calm
+resting pulse'],why:'Parasympathetic and sympathetic systems are
+balanced with healthy vagal tone.',steps:['Keep 30-45m daily aerobic +
+resistive training.','Drink 2.2-2.8L electrolyte fluids.'],prev:'Log
+morning HRV; limit late caffeine.',esc:'Routine monitoring only.'},
+      {id:'g2',r:1,tier:'green',cat:'Respiratory',title:'Nominal
+Oxygenation & Clear Airway',sum:'Full arterial O2 saturation and
+effortless breathing.',vit:'SpO2 98-100% • CO2 &lt; 3.0
+mmHg',sym:['Clear mental sharpness','Even chest expansion','Restful
+sleep breathing'],why:'Alveolar gas exchange and CO2 scrubbing run at
+peak efficiency.',steps:['Take periodic deep breaths at
+console.','Keep sleep vents clear.'],prev:'Maintain 40-55%
+humidity.',esc:'Alert med officer if SpO2 drops under 95%.'},
+      {id:'g3',r:1,tier:'green',cat:'Sleep &
+Circadian',title:'Restorative Circadian Alignment',sum:'Consistent
+7-8h sleep architecture and high recovery.',vit:'Sleep 7.0-8.5 hrs •
+Recovery 85-100%',sym:['Waking alert','Stable mood & reaction
+speed','Minimal awakenings'],why:'Melatonin aligns cleanly with dark
+sleep shifts despite 16 orbital sunrises/day.',steps:['Dim lights 45m
+pre-sleep.','Keep bunk cool (19-20°C) and dark.'],prev:'Anchor wake
+time within 30m.',esc:'Switch to Amber if sleep falls under 6h for 3
+nights.'},
+      {id:'g4',r:1,tier:'green',cat:'Mental Health',title:'High
+Psychological Resilience & Focus',sum:'Clear cognition, crew
+camaraderie, and adaptive coping.',vit:'Stress &lt; 35 • Mood
+Stable',sym:['Calm problem-solving','Positive communication','Grounded
+mission purpose'],why:'Prefrontal regulation keeps threat reactivity
+low and neurotransmitters balanced.',steps:['Protect 20-30m daily for
+leisure or Loved Ones Voice recordings.','Check in with
+teammates.'],prev:'Use AURA Safehouse before stress
+accumulates.',esc:'No escalation needed.'},
+      {id:'g5',r:1,tier:'green',cat:'Metabolic &
+Hydration',title:'Balanced Hydration, Nutrition &
+Immunity',sum:'Optimal electrolytes, steady glucose, strong
+immunity.',vit:'Temp 36.4-36.9°C • Fluid Nominal',sym:['Pale-straw
+hydration','Steady energy','Brisk healing'],why:'Balanced electrolytes
+sustain plasma volume against microgravity fluid shifts.',steps:['Eat
+balanced meals + Vitamin D3 & Omega-3.','Hydrate before and after
+training.'],prev:'Track fluid intake rather than thirst.',esc:'Routine
+wellness maintenance.'},
+      {id:'a1',r:2,tier:'amber',cat:'Cardiovascular',title:'Mild
+Orthostatic Strain / Fluid Shift',sum:'Lightheadedness on posture
+change or +10-15 bpm pulse.',vit:'HR 75-92 bpm • HRV 45-64
+ms',sym:['Head fullness or nasal stuffiness','Dizziness standing
+upright','Mild pulse elevation'],why:'Microgravity shifts ~1.5-2L
+fluid upward, shrinking plasma volume.',steps:['Drink 500mL
+electrolyte water over 30m.','Do calf pumps for venous
+return.','Change postures slowly.'],prev:'Hydrate early; wear
+compression garments if advised.',esc:'Escalate to RED if fainting or
+HR &gt; 110 bpm.'},
+      {id:'a2',r:2,tier:'amber',cat:'Respiratory',title:'Mild
+Hypercapnia / CO2 Headache',sum:'Dull morning headache and brain fog
+from CO2 pockets.',vit:'SpO2 95-97% • CO2 3.0-5.0 mmHg',sym:['Frontal
+waking headache','Mild sluggishness or warmth','Deeper rest
+breathing'],why:'Stagnant air traps CO2, dilating brain blood
+vessels.',steps:['Move to an actively ventilated module.','Aim fan
+across bunk/face and hydrate 350mL.'],prev:'Sleep with cross-flow fan
+active.',esc:'Escalate to RED if confusion or CO2 &gt; 5.5 mmHg.'},
+      {id:'a3',r:2,tier:'amber',cat:'Sleep &
+Circadian',title:'Circadian Drift & Acute Sleep Debt',sum:'Fragmented
+sleep (&lt;6h), heavy eyelids, delayed melatonin.',vit:'Sleep 4.5-6.0
+hrs • Recovery 55-74%',sym:['Wired-but-tired at bunk','Daytime
+attention slips','Irritability'],why:'Blue LED light or orbital
+sunrises suppress melatonin and keep cortisol high.',steps:['Cut
+screens 60m pre-sleep.','Run 4-7-8 Breathing + Forest Rain
+audio.','Limit caffeine to first 4h awake.'],prev:'Use bright wake
+lighting upon rising.',esc:'Escalate to RED if sleep &lt; 4h for 3+
+days.'},
+      {id:'a4',r:2,tier:'amber',cat:'Neuro-Vestibular &
+Muscle',title:'Motion Sensitivity & Spinal Strain',sum:'Queasiness on
+head turns, stiff neck, or lower back tightness.',vit:'HR +8 bpm •
+Lumbar Tightness',sym:['Mild nausea on fast head turns','Lower back
+ache','Console stiffness'],why:'Inner-ear sensory conflict causes
+nausea while spinal discs expand 3-5cm.',steps:['Turn torso slowly;
+fix gaze on horizon line.','Do 2m knee-to-chest stretches every
+2h.'],prev:'Break static posture every 45m.',esc:'Escalate to RED if
+persistent vomiting or leg numbness.'},
+      {id:'a5',r:2,tier:'amber',cat:'Mental Health &
+Hydration',title:'Operational Stress, Anxiety &
+Dehydration',sum:'Pre-EVA worry, Overview Effect melancholy, dry
+mouth/skin.',vit:'Stress 45-70 • HR 78-92 bpm',sym:['Racing thoughts
+or homesickness','Tight shoulders','Thirst & dry skin'],why:'Isolation
+drives adrenaline loops while dry cabin air depletes
+moisture.',steps:['Run 4-7-8 Breathing Pacer right now.','Listen to
+Loved Ones Voice recordings or open AURA (PIN: 1969).','Drink 600mL
+electrolytes.'],prev:'Break tasks into micro-steps; set hydration
+alerts.',esc:'Escalate to RED if panic or crisis thoughts emerge.'},
+      {id:'r1',r:3,tier:'red',cat:'Cardiovascular',title:'Acute
+Tachycardia / Chest Pain / Arrhythmia',sum:'CRITICAL: Resting HR &gt;
+110 bpm, chest pressure, irregular beats, fainting.',vit:'HR &gt; 110
+or Irregular • HRV &lt; 25 ms',sym:['Chest pain radiating to
+arm/jaw','Fluttering palpitations or blackout','Cold sweat & air
+hunger'],why:'Electrical instability or ischemia compromises heart
+pumping and brain perfusion.',steps:['STOP exertion immediately and
+recline.','Alert Flight Surgeon and start 12-lead ECG.','Give O2 if
+SpO2 &lt; 94% and run cardiac protocol.'],prev:'Report early
+exertional tightness.',esc:'PRIORITY-1 MEDICAL EMERGENCY.'},
+      {id:'r2',r:3,tier:'red',cat:'Respiratory',title:'Severe Hypoxia
+/ Toxic Gas / Decompression',sum:'CRITICAL: SpO2 &lt; 90%, cyanosis,
+severe air hunger, pressure drop.',vit:'SpO2 &lt; 90% • CO2 &gt; 6
+mmHg',sym:['Gasping, bluish lips','Sudden confusion or
+clumsiness','Joint pain (decompression)'],why:'Critically low O2
+starves brain neurons within minutes.',steps:['DON 100% emergency O2
+mask IMMEDIATELY.','Check pressure/gas sensors and isolate hatch
+leak.','Verify crew buddy oxygen first.'],prev:'Respond instantly to
+caution alarms.',esc:'LIFE-THREATENING EMERGENCY. 100% O2 first.'},
+      {id:'r3',r:3,tier:'red',cat:'Immune & Radiation',title:'Acute
+Radiation Event / Systemic Infection',sum:'CRITICAL: High fever
+(&gt;38.3°C), solar storm alert, severe infection.',vit:'Temp &gt;
+38.3°C • Dose &gt; 2.0 mSv/day',sym:['High fever, chills, severe
+weakness','Vomiting after solar storm','Warm spreading skin
+infection'],why:'Solar protons injure marrow/GI cells; sepsis triggers
+shock.',steps:['Enter shielded storm shelter bay now.','Log dosimetry
+& temp q30m.','Start Flight Surgeon antimicrobial/fluid
+protocol.'],prev:'Check space weather pre-EVA.',esc:'CRITICAL MEDICAL
+ALERT. Shelter & medical officer.'},
+      {id:'r4',r:3,tier:'red',cat:'Neuro & Thermal',title:'Severe SANS
+Pressure / Vertigo / Heat Stroke',sum:'CRITICAL: Sudden blurred
+vision, violent vertigo, or core temp &gt; 39°C.',vit:'Visual Drop •
+Temp &gt; 39.0°C • HR &gt; 115',sym:['Double vision, blind spots,
+thunderclap headache','Violent vertigo & vomiting','Heat
+confusion/staggering'],why:'High intracranial pressure or core temp
+&gt; 39.5°C damages neural tissue.',steps:['Abort task; stabilize in
+cool, dark bay.','Apply cold packs to neck/armpits/groin.','Run
+pupil/vision check & alert Flight Surgeon.'],prev:'Verify liquid
+cooling flow and ocular scans.',esc:'CRITICAL EMERGENCY. Rapid cooling
+& telemetry.'},
+      {id:'r5',r:3,tier:'red',cat:'Mental Health',title:'Acute
+Psychological Crisis / Panic / Collapse',sum:'CRITICAL: Uncontrolled
+panic, dissociation, shutdown, self-harm risk.',vit:'Stress &gt; 80 •
+Sleep &lt; 4h (3+ days)',sym:['Panic storm with
+trembling','Hopelessness or self-harm urges','Cognitive
+shutdown'],why:'Extreme sleep loss plus isolation overwhelms
+prefrontal coping brakes.',steps:['Stand down from ALL safety-critical
+controls.','Connect with Medical Officer/Psychologist—never stay
+alone.','Open AURA (PIN: 1969) for grounding.','On Earth: Call/text
+988 (US/CA), 112/999 (EU/UK) NOW.'],prev:'Intervene at Amber stage
+before sleep collapse.',esc:'PRIORITY HUMAN SAFETY INTERVENTION.'}
+    ];
+
+    let curTier='all',expId=null;
+    function setTier(t){curTier=t;['all','green','amber','red'].forEach(k=>document.getElementById('fb-'+k).classList.toggle('on',k===t));closeExplain();renderGuidance()}
+    function toggleCond(id){expId=(expId===id?null:id);renderGuidance()}
+    function openExplain(id){
+      const c=CONDITIONS.find(x=>x.id===id);if(!c)return;
+      document.getElementById('guide-list-wrap').classList.add('hidden');
+      const w=document.getElementById('guide-exp-wrap');w.classList.remove('hidden');
+      const lbl=c.tier==='green'?'🟢 GREEN • OPTIMAL
+(BEST)':c.tier==='amber'?'🟡 AMBER • CAUTION (MODERATE)':'🔴 RED •
+CRITICAL (WORST)';
+      w.innerHTML=`<div
+style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;"><button
+class="btn-sec" onclick="closeExplain()">← Back to All
+Conditions</button><span class="tier-pill tp-${c.tier}
+mono">${lbl}</span></div>
+        <div class="panel"
+style="padding:18px;background:linear-gradient(135deg,#0f172a,#020617);"><div
+class="mono" style="font-size:11px;color:var(--cy);margin-bottom:4px;">${c.cat.toUpperCase()}
+• FULL EXPLANATION PAGE</div><h2
+style="font-size:21px;font-weight:800;margin-bottom:5px;">${c.title}</h2><p
+style="font-size:13px;color:#cbd5e1;margin-bottom:9px;">${c.sum}</p><span
+class="mono" style="font-size:11px;background:#020617;padding:5px
+9px;border-radius:7px;border:1px solid
+var(--bd);color:var(--cy);display:inline-block;width:fit-content;">${c.vit}</span></div>
+        <div class="detail-grid">
+          <div class="detail-box"><h4>1. Inside the
+Body</h4><p>${c.why}</p></div>
+          <div class="detail-box"><h4>2. Signs & Symptoms</h4><ul
+style="padding-left:16px;">${c.sym.map(s=>`<li>${s}</li>`).join('')}</ul></div>
+          <div class="detail-box"
+style="border-color:rgba(34,211,238,.35);"><h4>3. Action
+Protocol</h4><ol style="padding-left:18px;">${c.steps.map(s=>`<li
+style="margin-bottom:4px;">${s}</li>`).join('')}</ol></div>
+          <div class="detail-box"><h4>4. Prevention &
+Escalation</h4><p
+style="margin-bottom:7px;"><strong>Prevention:</strong>
+${c.prev}</p><p
+style="color:${c.tier==='red'?'var(--rd)':'#fde68a'};"><strong>Escalation:</strong>
+${c.esc}</p></div>
+        </div>
+        <div class="panel"
+style="padding:13px;flex-direction:row;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;"><span
+style="font-size:12.5px;color:#cbd5e1;">Need support for
+<strong>${c.title}</strong>?</span><div
+style="display:flex;gap:8px;flex-wrap:wrap;"><button class="btn-sec"
+onclick="setView('family')">🎙️ Loved Ones Voices</button><button
+class="btn-pri"
+onclick="openAuraFor('${c.title.replace(/'/g,'')}')">🔒 Discuss in
+AURA (PIN: 1969)</button></div></div>`;
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function closeExplain(){document.getElementById('guide-exp-wrap').classList.add('hidden');document.getElementById('guide-list-wrap').classList.remove('hidden')}
+    // AURA MULTI-ROLE, MULTI-TURN CHAT + BREATHING + AUDIO
+    let unlocked=false,pTimer=null,pPhase='Inhale',pSec=4,chatRole='psychologist',chatBusy=false,chatHistory=[];
+    const ROLE_META={
+      psychologist:{
+        badge:'Care Psychologist',
+        pills:[
+          {l:'Insomnia & Sunrises',p:'I am struggling to sleep with 16
+orbital sunrises a day and constant equipment hum. How do I
+recalibrate my circadian rhythm?'},
+          {l:'Earth Homesickness',p:'Looking at Earth from the cupola
+is overwhelming me with acute homesickness and sensory deprivation.'},
+          {l:'Pre-EVA Anxiety',p:'I have a demanding Extravehicular
+Activity tomorrow and my heart rate is elevated. Help me mentally
+decompress.'},
+          {l:'Crew Friction',p:'I am feeling irritated by a fellow
+crew member in the module and do not want it to escalate.'}
+        ]
+      },
+      flight_surgeon:{
+        badge:'Flight Surgeon',
+        pills:[
+          {l:'Analyze HRP Risks',p:'Analyze my current vitals across
+SANS eye pressure, bone loss, renal stones, radiation dose, and HRV.
+What needs attention?'},
+          {l:'SANS & Head Fullness',p:'Walk me through my current
+intraocular pressure, optic disc status, and SANS countermeasures.'},
+          {l:'CO2 & Sleep Fatigue',p:'Compare mild CO2 hypercapnia
+symptoms against circadian sleep debt based on my current recovery
+metrics.'},
+          {l:'Solar Radiation Plan',p:'Explain the protocol if solar
+proton flux rises during my duty shift and how to adjust EVA plans.'}
+        ]
+      },
+      mission_ops:{
+        badge:'Ops Copilot',
+        pills:[
+          {l:'30s Breathing Cue',p:'Give me a fast 30-second
+physiological sigh checklist right now.'},
+          {l:'OCT Calibration Check',p:'Give me a quick step-by-step
+diagnostic check if the Optical Coherence Tomography scanner shows
+blurry layers.'},
+          {l:'Pre-EVA N2 Washout',p:'List the rapid pre-EVA
+decompression and O2 pre-breathe safety checklist.'},
+          {l:'Bunk CO2 Pocket Fix',p:'Quick checklist to clear
+stagnant CO2 around the crew sleep station.'}
+        ]
+      }
+    };
+    function loadChatHistory(){
+      try{
+        const raw=localStorage.getItem('ares_aura_chat_'+crewKey);
+        chatHistory=raw?JSON.parse(raw):[];
+      }catch(e){chatHistory=[]}
+      if(!Array.isArray(chatHistory)||!chatHistory.length){
+        chatHistory=[{id:'init',sender:'aura',content:`Good cycle,
+${crew.name}. Confidential channel locked behind your private passkey
+(HR ${crew.hr}, HRV ${crew.hrv}, Strain: ${crew.str}). Choose
+Psychologist, Flight Surgeon, or Ops Copilot above.`}];
+      }
+      renderMessages();
+    }
+    function saveChatHistory(){
+      try{localStorage.setItem('ares_aura_chat_'+crewKey,JSON.stringify(chatHistory.slice(-40)))}catch(e){}
+    }
+    function renderMessages(){
+      const m=document.getElementById('msgs');if(!m)return;
+      m.innerHTML=chatHistory.map(msg=>`<div class="msg
+${msg.sender}">${escapeHtml(msg.content)}</div>`).join('');
+      m.scrollTop=m.scrollHeight;
+    }
+    function escapeHtml(s){return
+String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+    function renderChatPills(){
+      const box=document.getElementById('chat-pills');if(!box)return;
+      box.innerHTML=ROLE_META[chatRole].pills.map((x,idx)=>`<button
+type="button" class="pill"
+onclick="quickIdx(${idx})">${x.l}</button>`).join('');
+    }
+    function setChatRole(r){
+      if(!ROLE_META[r])return;
+      chatRole=r;
+      ['psychologist','flight_surgeon','mission_ops'].forEach(k=>document.getElementById('rb-'+k)?.classList.toggle('on',k===r));
+      const b=document.getElementById('aura-role-badge');if(b)b.innerText=ROLE_META[r].badge;
+      renderChatPills();
+    }
+    renderChatPills();
+    function toggleChat(open){const
+b=document.getElementById('aura-box');if(open===true)b.classList.remove('hidden');else
+if(open===false)b.classList.add('hidden');else
+b.classList.toggle('hidden')}
+    function addK(d){const
+i=document.getElementById('pin-in');if(i.value.length<6)i.value+=d}
+    function clrK(){document.getElementById('pin-in').value=''}
+    function autoK(){document.getElementById('pin-in').value='1969'}
+    function unlockChat(){
+      if(['1969','4242','2001','0000'].includes(document.getElementById('pin-in').value.trim())){
+        unlocked=true;document.getElementById('lock-ui').classList.add('hidden');document.getElementById('chat-ui').classList.remove('hidden');
+        document.getElementById('panic-btn').classList.remove('hidden');document.getElementById('wipe-btn').classList.remove('hidden');
+        document.getElementById('hdr-lock').innerText='🔓';document.getElementById('pin-err').classList.add('hidden');
+        loadChatHistory();renderChatPills();
+      }else document.getElementById('pin-err').classList.remove('hidden');
+    }
+    function lockChat(){
+      unlocked=false;document.getElementById('chat-ui').classList.add('hidden');document.getElementById('lock-ui').classList.remove('hidden');
+      document.getElementById('panic-btn').classList.add('hidden');document.getElementById('wipe-btn').classList.add('hidden');
+      document.getElementById('hdr-lock').innerText='🔒';clrK();
+    }
+    function clearChatHistory(){
+      if(!confirm('Wipe this private session memory?'))return;
+      chatHistory=[{id:'clr',sender:'aura',content:'Session wiped
+cleanly. Zero residual logs retained. How can I support you?'}];
+      saveChatHistory();renderMessages();
+    }
+    window.addEventListener('keydown',e=>{if(e.key==='Escape'&&unlocked)lockChat()});
+    document.getElementById('pin-in').addEventListener('keydown',e=>{if(e.key==='Enter')unlockChat()});
+    function addMsg(who,txt){chatHistory.push({id:'m'+Date.now()+Math.random(),sender:who,content:txt});saveChatHistory();renderMessages()}
+    function openAuraFor(title){toggleChat(true);if(unlocked)addMsg('aura',`Opened
+context for: ${title}. Ask Care Psychologist, Flight Surgeon, or Ops
+Copilot for guidance.`)}
+    function setAiStatus(kind,label){
+      const el=document.getElementById('aura-ai-status');if(!el)return;
+      if(kind==='live'){el.style.color='var(--gn)';el.style.borderColor='rgba(52,211,153,.45)';el.style.background='rgba(5,150,105,.18)';el.innerText=label||'Live
+Gemini AI';}
+      else if(kind==='offline'){el.style.color='var(--am)';el.style.borderColor='rgba(251,191,36,.45)';el.style.background='rgba(217,119,6,.18)';el.innerText=label||'Offline
+Backup';}
+      else{el.style.color='#94a3b8';el.style.borderColor='#334155';el.style.background='#0f172a';el.innerText=label||'AI
+Ready';}
+    }
+    function showTypingBubble(){
+      const m=document.getElementById('msgs');if(!m)return;
+      removeTypingBubble();
+      const d=document.createElement('div');
+      d.id='aura-typing';d.className='msg aura';d.style.color='var(--cy)';
+      d.innerText='AURA is thinking...';
+      m.appendChild(d);m.scrollTop=m.scrollHeight;
+    }
+    function removeTypingBubble(){const
+t=document.getElementById('aura-typing');if(t)t.remove();}
+    function extractFocusTerms(text){
+      const stop=new
+Set(['i','im','i\'m','me','my','mine','you','your','we','us','our','the','a','an','and','or','but','if','is','am','are','was','were','be','been','to','of','in','on','at','for','with','from','about','this','that','it','its','do','does','did','can','could','would','should','what','why','how','when','where','who','tell','please','help','need','want','feel','feeling','just','very','really','have','has','had','get','got']);
+      return text.toLowerCase().replace(/[^a-z0-9\s-]/g,'
+').split(/\s+/).filter(w=>w.length>2&&!stop.has(w)).slice(0,4);
+    }
+    function buildLocalRoleReply(userText,role,mode){
+      const q=userText.trim().toLowerCase();
+      const prevMsgs=chatHistory.slice(0,-1);
+      const prevUser=[...prevMsgs].reverse().find(m=>m.sender==='user')?.content||'';
+      const prevAura=[...prevMsgs].reverse().find(m=>m.sender==='aura')?.content||'';
+      const pres=document.getElementById('a-pres')?.innerText||'101.3 kPa';
+      const o2=document.getElementById('a-o2')?.innerText||'20.9%';
+      const co2=document.getElementById('a-co2')?.innerText||'2.8 mmHg';
+      const temp=document.getElementById('a-temp')?.innerText||'21.0°C';
+      const orbit=document.getElementById('a-orbit')?.innerText||'418 km';
+      const sw=document.getElementById('a-sw')?.innerText||'Kp 1.0';
+      const donki=document.getElementById('a-donki')?.innerText||'Nominal';
+      const iopNum=parseFloat(crew.iop)||15;
+      const slpNum=parseFloat(crew.slp)||7.0;
+      const hrvNum=parseFloat(crew.hrv)||70;
+      const hrNum=parseInt(crew.hr)||68;
+      const deep=mode==='deep';
+      const isQ=userText.includes('?')||/^(what|how|why|when|where|can|could|should|is|are|do|does|tell|explain|show|check|give|list)\b/.test(q);
+
+      // 1. Direct interactive habitat / UI commands
+      if(/\b(switch|select|change)\b.*\b(elena|alex|marcus|sarah|aurora|titan|kestrel|valkyrie)\b/.test(q)){
+        const target=q.includes('alex')||q.includes('titan')?'alex':q.includes('marcus')||q.includes('kestrel')?'marcus':q.includes('sarah')||q.includes('valkyrie')?'sarah':'elena';
+        setCrew(target);
+        return `Switched active crew profile to ${crew.name}
+(${crew.tag}) — HR ${crew.hr}, HRV ${crew.hrv}, Sleep ${crew.slp},
+Strain: ${crew.str}. What would you like me to check for
+${crew.name}?`;
+      }
+      if(/\b(start|begin|open|run|do)\b.*\b(breath|pacer|4-7-8|478)\b/.test(q)){
+        if(!pTimer)togglePacer();
+        return `Started the 4-7-8 Breathing Pacer on your dashboard:
+inhale 4s, hold 7s, exhale slowly 8s. Follow the pulsing orb for 3–4
+cycles to lower heart rate from ${crew.hr}. Say "stop breathing"
+whenever you want to pause.`;
+      }
+      if(/\b(stop|pause)\b.*\b(breath|pacer)\b/.test(q)){
+        if(pTimer)togglePacer();
+        return `Paused the 4-7-8 Breathing Pacer. Take a moment to
+notice how your shoulders and breathing feel right now.`;
+      }
+      if(/\b(play|start|turn on)\b.*\b(ocean|swell|sea|waves)\b/.test(q)){
+        playSound('ocean');
+        return `Playing **Pacific Ocean Swell** through the Web Audio
+synthesizer. Let the slow wave cadence settle your nervous system
+while you rest or talk with me.`;
+      }
+      if(/\b(play|start|turn on)\b.*\b(rain|forest)\b/.test(q)){
+        playSound('rain');
+        return `Playing **Forest Rain** soundscape to mask sharp cabin
+equipment noise and help ease circadian rest.`;
+      }
+      if(/\b(play|start|turn on)\b.*\b(432|hz|calm|meditat)\b/.test(q)){
+        playSound('hz');
+        return `Playing **432 Hz Calm Resonance**. Sit back, soften
+your gaze, and let your exhale lengthen naturally.`;
+      }
+      if(/\b(stop|mute|quiet|off)\b.*\b(audio|sound|music|rain|ocean|432)\b/.test(q)){
+        stopSound();
+        return `Audio stopped. Let me know if you want another
+soundscape or would prefer to talk.`;
+      }
+      if(/\b(open|show|go
+to)\b.*\b(guidance|conditions|tier|green|amber|red)\b/.test(q)){
+        setView('guidance');
+        return `Opened the **3-Tier Health Guidance** tab (Green →
+Amber → Red). Tell me which symptom or condition you want me to walk
+through.`;
+      }
+      if(/\b(open|show|go
+to)\b.*\b(device|devices|hardware|equipment)\b/.test(q)){
+        setView('devices');
+        return `Opened the **30 Space Medical Devices** guidebook.
+Name any instrument (e.g., ECG, OCT, Ultrasound, Oximeter, AED,
+i-STAT) and I will give you its exact fault checks and backup plan.`;
+      }
+      if(/\b(open|show|go
+to)\b.*\b(voice|voices|family|reminder|reminders)\b/.test(q)){
+        setView('family');
+        return `Opened **Loved Ones Voices & Vital Reminders**. You
+can play family audio recordings or renew overdue biomedical scan
+timers there.`;
+      }
+
+      // 2. Greetings, thanks, and conversational check-ins
+      if(/^(hi|hello|hey|good morning|good evening|greetings|yo)\b[!.
+]*$/.test(q)){
+        const opts=[
+          `Hello, ${crew.name}. Your current vitals look steady (HR
+${crew.hr}, HRV ${crew.hrv}, Cabin CO2 ${co2}). How are you feeling on
+this shift?`,
+          `Good to hear from you, ${crew.name}. Right now you are in
+**${ROLE_META[chatRole].badge}** mode (${orbit}, ${sw}). What is on
+your mind or what would you like me to check?`,
+          `Hi ${crew.name} — confidential channel open. Ask me about
+your vitals, ISS cabin status, any of the 30 medical devices, or
+simply tell me what kind of day you are having.`
+        ];
+        return opts[chatHistory.length%opts.length];
+      }
+      if(/^(thanks|thank you|thx|appreciate|grateful)\b/.test(q)){
+        return `You are very welcome, ${crew.name}. Anytime you want
+to double-check a reading, troubleshoot hardware, or decompress in
+private, I am right here.`;
+      }
+
+      // 3. Follow-up awareness ("why?", "tell me more", "what next?", "how?")
+      const isShortFollowUp=(q.length<36&&/^(why|how|more|tell me
+more|what else|what
+next|and|then|explain|yes|yeah|sure|ok|okay)\b/.test(q));
+      if(isShortFollowUp&&prevAura){
+        if(prevAura.toLowerCase().includes('co2')||prevUser.toLowerCase().includes('headache')){
+          return `To expand on CO2 and ventilation: even mild buildup
+above 3.0 mmHg (currently ${co2}) dilates brain blood vessels and
+causes heavy morning fog in microgravity where warm exhaled air
+doesn't rise. Boosting cross-flow airflow and drinking 400 mL
+electrolytes usually clears it within 20–30 minutes.`;
+        }
+        if(prevAura.toLowerCase().includes('sans')||prevAura.toLowerCase().includes('iop')||prevUser.toLowerCase().includes('eye')){
+          return `Following up on SANS physiology: without Earth's
+gravity pulling blood toward the feet, venous fluid pools in the upper
+body and gently flattens the back of the eye (your IOP is ${crew.iop},
+optic disc ${crew.disc}). Regular OCT + Ultrasound-2 checks plus
+keeping CO2 under 3.0 mmHg help protect vision.`;
+        }
+        if(prevAura.toLowerCase().includes('sleep')||prevUser.toLowerCase().includes('sleep')){
+          return `Continuing on circadian recovery (${crew.slp},
+${crew.rec}): dimming blue console light 45 minutes pre-bunk, blocking
+cupola/window glare, and pairing Forest Rain soundscape with 4-7-8
+breathing raises deep slow-wave sleep cleanly.`;
+        }
+        return `Building on your earlier note
+("${prevUser.slice(0,55)}"), tell me whether you want a physiological
+explanation, a step-by-step action checklist, or a quiet grounding
+exercise.`;
+      }
+
+      // 4. Match specific medical devices from the 30 CHeCS DEVICES catalog
+      const devTokens=extractFocusTerms(userText);
+      const matchedDev=DEVICES.find(d=>{
+        const hay=(d.name+' '+d.c+' '+d.p+' '+d.b.join(' ')).toLowerCase();
+        return devTokens.some(t=>t.length>=3&&hay.includes(t))&&(q.includes('device')||q.includes('broken')||q.includes('error')||q.includes('check')||q.includes('fix')||q.includes('ecg')||q.includes('oct')||q.includes('ultrasound')||q.includes('oximeter')||q.includes('tonometer')||q.includes('istat')||q.includes('i-stat')||q.includes('aed')||q.includes('ventilator')||q.includes('suction')||q.includes('spirometer')||q.includes('glucometer')||q.includes('ared')||q.includes('chibis')||q.includes('fundoscope')||q.includes('otoscope')||q.includes('dosimeter')||q.includes('pump')||q.includes('thermometer'));
+      });
+      if(matchedDev){
+        return `**CHeCS Device #${matchedDev.n}: ${matchedDev.name}**
+(${matchedDev.c})\n• Purpose: ${matchedDev.p}\n• Watch for breakdown
+signs: ${matchedDev.b.join(';
+').replace(/&gt;/g,'>').replace(/&lt;/g,'<')}\n• Diagnostic Self-Test:
+${matchedDev.k}\n• Backup Action: ${matchedDev.bk}`;
+      }
+
+      // 5. Match specific Health Guidance conditions (Green / Amber / Red)
+      const matchedCond=CONDITIONS.find(c=>{
+        const hay=(c.title+' '+c.cat+' '+c.sum+' '+c.sym.join('
+')).toLowerCase();
+        return devTokens.filter(t=>hay.includes(t)).length>=2||(q.includes('chest
+pain')&&c.id==='r1')||(q.includes('hypoxia')&&c.id==='r2')||(q.includes('vertigo')&&c.id==='r4')||(q.includes('blurry')&&c.id==='r4')||(q.includes('headache')&&c.id==='a2')||(q.includes('dizzy')&&c.id==='a1')||(q.includes('nausea')&&c.id==='a4')||(q.includes('panic')&&c.id==='r5');
+      });
+      if(matchedCond){
+        const badge=matchedCond.tier==='red'?'🔴 RED
+(CRITICAL)':matchedCond.tier==='amber'?'🟡 AMBER (CAUTION)':'🟢 GREEN
+(OPTIMAL)';
+        return `**${badge} — ${matchedCond.title}**\n• Key Vitals:
+${matchedCond.vit.replace(/&gt;/g,'>').replace(/&lt;/g,'<')}\n• Why It
+Happens: ${matchedCond.why}\n• Immediate
+Steps:\n${matchedCond.steps.map((s,i)=>`${i+1}. ${s}`).join('\n')}\n•
+Escalation: ${matchedCond.esc.replace(/&gt;/g,'>').replace(/&lt;/g,'<')}`;
+      }
+
+      // 6. Specific Telemetry / Habitat / Space Weather queries
+      if(/\b(iss|orbit|cabin|atmosphere|pressure|oxygen|o2|co2|donki|space
+weather|kp|proton)\b/.test(q)){
+        return `**Live ISS & Space Telemetry Readout:**\n• Orbit &
+Phase: ${orbit}\n• Cabin Atmosphere: Pressure ${pres} • O₂ ${o2} • CO₂
+${co2} • Temp ${temp}\n• Space Weather: ${sw} •
+${donki}\n${parseFloat(co2)>=3.0?'Note: Cabin CO2 is slightly
+elevated—verify IMV bunk airflow if you feel sluggish.':'All cabin
+life-support parameters are within nominal crew tolerances.'}`;
+      }
+      if(/\b(vitals|status|report|summary|check me|how am i|my
+stats|telemetry)\b/.test(q)){
+        const warns=[];
+        if(hrNum>90)warns.push(`elevated HR (${crew.hr})`);
+        if(hrvNum<55)warns.push(`low HRV recovery (${crew.hrv})`);
+        if(slpNum<6.2)warns.push(`sleep debt (${crew.slp})`);
+        if(iopNum>=18)warns.push(`elevated IOP (${crew.iop})`);
+        return `**${crew.name} (${crew.tag}) Live Snapshot:**\n•
+Vitals: HR ${crew.hr}, HRV ${crew.hrv}, SpO₂ ${crew.spo}, Temp
+${crew.btemp}, Sleep ${crew.slp} (${crew.rec}), Strain: ${crew.str}\n•
+HRP Risks: IOP ${crew.iop} (${crew.disc}), Bone ${crew.bone}, Renal
+${crew.renal}, Muscle ${crew.mus}, Rad ${crew.rad}\n• Assessment:
+${warns.length?'Attention recommended on '+warns.join(', ')+'.':'Core
+cardiovascular and cognitive indicators look balanced right now.'}`;
+      }
+      if(/\b(heart|hr|hrv|pulse|cardio)\b/.test(q)){
+        return `Your resting heart rate is **${crew.hr}** with Heart
+Rate Variability at **${crew.hrv}** (Cortisol: ${crew.cor}).
+${hrvNum<55?'Lower HRV suggests sympathetic strain or sleep
+debt—consider 4 cycles of 4-7-8 breathing ("start breathing") and 400
+mL electrolytes.':'Your autonomic recovery balance is solid right
+now.'}`;
+      }
+      if(/\b(sleep|insomnia|tired|exhausted|sunrise|circadian|melatonin|rest)\b/.test(q)){
+        return `Your logged sleep is **${crew.slp}** (Recovery:
+**${crew.rec}**). With 16 orbital sunrises/day, melatonin needs active
+protection:\n1. Dim screens 45 minutes pre-sleep and seal window
+light.\n2. Keep cross-flow fan ventilation active across your bunk
+(Cabin CO₂: ${co2}).\n3. Say "play rain" or "start breathing" whenever
+you are ready to wind down.`;
+      }
+      if(/\b(sans|eye|eyes|vision|optic|iop|ocular)\b/.test(q)){
+        return `Your **SANS (Neuro-Ocular)** reading shows Intraocular
+Pressure **${crew.iop}** with Optic Disc status **${crew.disc}**.
+Because microgravity shifts ~1.5–2L of fluid headward, track
+near-vision changes, schedule OCT + Ultrasound-2 scans, and keep cabin
+CO₂ (${co2}) under 3.0 mmHg.`;
+      }
+      if(/\b(radiation|solar|rad|dose|storm|dosimetry)\b/.test(q)){
+        return `Your cumulative/daily dose is **${crew.rad}** and
+current space weather reads **${sw}** (${donki}). Cross-check your
+personal RAD against the TEPC habitat sensor every 6h; if proton flux
+exceeds 10 pfu or Kp >= 6, hold non-essential EVA work and move to the
+shielded storm shelter.`;
+      }
+      if(/\b(anxious|anxiety|stress|stressed|nervous|scared|worried|overwhelmed|panic|tight)\b/.test(q)){
+        return `Thank you for saying that out loud instead of carrying
+it alone. Right now your telemetry shows **HR ${crew.hr}** and
+**Strain: ${crew.str}**.\nLet's settle the physical spike first: take
+two quick inhales through your nose (physiological sigh) followed by
+one long slow exhale—or type **"start breathing"** and **"play 432"**
+so we pace your heart rate down together. What is triggering the
+pressure right now?`;
+      }
+      if(/\b(home|homesick|family|miss|lonely|alone|cupola|earth|sad|cry)\b/.test(q)){
+        return `It makes complete sense to feel that ache from orbit,
+${crew.name}—seeing Earth from above while isolated from everyone you
+love carries heavy emotional weight. Would it help to open **Voices &
+Reminders** ("open voices") to hear a recording from home, or put on
+**Pacific Ocean Swell** ("play ocean") while we talk through what you
+miss most?`;
+      }
+      if(/\b(crew|teammate|irritat|annoy|angry|conflict|argue|friction)\b/.test(q)){
+        return `Living in tight orbital modules under sleep strain
+(${crew.slp}) magnifies small frictions fast. Before replying to your
+crewmate, step to a quiet bay for 2 minutes of slow exhales and
+separate the operational phrasing from personal intent. If you want to
+vent safely here in confidence, I am listening.`;
+      }
+      if(/\b(bored|monoton|nothing|numb|focus|distract)\b/.test(q)){
+        return `Sensory monotony in metal modules can dull focus
+quickly. Try shifting your environment for 5 minutes—play **Forest
+Rain** ("play rain") for organic acoustic variation, stretch your
+spine against the rack, or review a short goal before your next
+task.`;
+      }
+      if(/\b(bone|renal|kidney|stone|muscle|balance|vestibular|immune|microbiome|eva)\b/.test(q)){
+        return `**HRP Subsystem Details for ${crew.name}:**\n• Bone &
+Renal: ${crew.bone} | Stone Risk: ${crew.renal} (hydrate 2.4–2.8 L/day
+& keep resistive ARED loading)\n• Muscle & Vestibular: Muscle
+${crew.mus} (${crew.orth}) | Balance ${crew.vest}\n• Immune &
+Microbiome: ${crew.imm} | Microbiome ${crew.mic}\n• EVA Decompression
+Status: ${crew.dcs}`;
+      }
+
+      // 8. Intelligent contextual response tailored to any arbitrary
+sentence or question (never a single static fallback!)
+      const terms=extractFocusTerms(userText);
+      const topicPhrase=terms.length?terms.join(', '):userText.slice(0,48);
+      if(role==='flight_surgeon'){
+        return `Focusing on **${topicPhrase}** in your current mission
+context (${crew.name}: HR ${crew.hr}, HRV ${crew.hrv}, SpO₂
+${crew.spo}, CO₂ ${co2}): ${isQ?'could you share what specific
+symptom, timeframe, or vital change you noticed so I can evaluate
+Amber/Red risk thresholds precisely?':'I have logged that observation
+alongside your live HRP baseline. Tell me if any physical symptoms
+like headache, dizziness, or vision changes are present.'}${deep?'
+(Ask "my status" anytime for a full 8-system HRP readout.)':''}`;
+      }
+      if(role==='mission_ops'){
+        return `Got your command regarding **${topicPhrase}**
+(${orbit} • CO₂ ${co2}): specify the module, medical device, or
+checklist step (e.g., **ECG**, **OCT**, **Pre-EVA N2 Washout**, or
+**start breathing**) and I will output the exact numbered drill.`;
+      }
+      return `I hear what you shared about **${topicPhrase}**,
+${crew.name}. ${isQ?'Let us break that question down step by step—what
+part of it feels most urgent for your shift or wellbeing right
+now?':'Even without ground mission control on this loop, you have
+space here to talk through it openly. Would you like practical steps,
+a quick check of your vitals, or a calming exercise?'}`;
+    }
+    async function dispatchChat(text){
+      if(!text||chatBusy)return;
+      chatBusy=true;
+      const sendBtn=document.getElementById('chat-send');if(sendBtn)sendBtn.disabled=true;
+      addMsg('user',text);
+      showTypingBubble();
+      const mode=document.getElementById('chat-mode')?.value||'auto';
+      const cabinCtx={
+        pressure:document.getElementById('a-pres')?.innerText||'101.3 kPa',
+        o2:document.getElementById('a-o2')?.innerText||'20.9%',
+        co2:document.getElementById('a-co2')?.innerText||'2.8 mmHg',
+        temp:document.getElementById('a-temp')?.innerText||'21.0°C',
+        orbit:document.getElementById('a-orbit')?.innerText||'418 km',
+        spaceWeather:document.getElementById('a-sw')?.innerText||'Kp 1.0'
+      };
+      const payload=JSON.stringify({
+        role:chatRole,
+        mode,
+        astronaut:{name:crew.name,callsign:crew.tag,role:crew.role,missionDay:142,currentDuty:'Orbital
+Ops'},
+        vitals:{heartRate:parseInt(crew.hr)||68,hrv:parseInt(crew.hrv)||70,spo2:parseInt(crew.spo)||99,sleepHours:parseFloat(crew.slp)||7,stressLevel:crew.str,stressScore:45,radiationToday:0.25,cumulativeRad:32,ocularPressure:parseInt(crew.iop)||15,opticDiscStatus:crew.disc,boneDensityDelta:crew.bone,renalStoneRisk:crew.renal,immuneStatus:crew.imm,bodyTemp:parseFloat(crew.btemp)||36.6},
+        cabin:cabinCtx,
+        messages:chatHistory.slice(-16)
+      });
+      let replyText=null;
+      let usedSource=null;
+      const params=new URLSearchParams(location.search);
+      const customApi=(params.get('api')||'').trim().replace(/\/+$/,'');
+      const endpoints=customApi
+        ? [customApi+'/api/chat']
+        : (location.protocol!=='file:' ?
+['/api/chat','/.netlify/functions/chat'] : []);
+      for(const ep of endpoints){
+        try{
+          const res=await
+fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:payload});
+          if(!res.headers.get('content-type')?.includes('application/json'))continue;
+          const data=await res.json();
+          if(res.ok&&data?.reply){
+            replyText=data.reply;
+            usedSource=data.source||'gemini';
+            break;
+          }
+          if(res.status===400||res.status===403||res.status===429||res.status===503){
+            if(data?.error){
+              replyText='Backend notice: '+data.error;
+              usedSource='error';
+              break;
+            }
+          }
+        }catch(e){}
+      }
+      removeTypingBubble();
+      if(usedSource&&usedSource!=='local-psych-core'&&usedSource!=='error'){
+        setAiStatus('live','Live Gemini AI');
+      }else{
+        setAiStatus('offline',usedSource==='error'?'Backend Setup
+Needed':'Adaptive Local AI');
+      }
+      if(!replyText)replyText=buildLocalRoleReply(text,chatRole,mode);
+      addMsg('aura',replyText);
+      chatBusy=false;
+      if(sendBtn)sendBtn.disabled=false;
+    }
+    function sendMsg(e){e.preventDefault();const
+i=document.getElementById('chat-in'),t=i.value.trim();if(!t)return;i.value='';dispatchChat(t)}
+    function quickIdx(idx){const
+item=ROLE_META[chatRole]?.pills[idx];if(item)dispatchChat(item.p)}
+    function togglePacer(){const
+btn=document.getElementById('p-btn');if(pTimer){clearInterval(pTimer);pTimer=null;btn.innerText='▶
+Begin Pacing';return}btn.innerText='⏸
+Pause';pTimer=setInterval(()=>{pSec--;if(pSec<=0){if(pPhase==='Inhale'){pPhase='Hold';pSec=7}else
+if(pPhase==='Hold'){pPhase='Exhale';pSec=8}else{pPhase='Inhale';pSec=4}}document.getElementById('p-phase').innerText=pPhase;document.getElementById('p-sec').innerText=pSec+'s';document.getElementById('orb').style.transform=pPhase==='Exhale'?'scale(0.85)':'scale(1.15)';document.getElementById('p-msg').innerText=pPhase==='Inhale'?'Breathe
+in deeply...':pPhase==='Hold'?'Hold gently...':'Exhale
+slowly...'},1000)}
+    function renderGuidance(){
+      const q=(document.getElementById('g-search')?.value||'').trim().toLowerCase();
+      const list=[...CONDITIONS].sort((a,b)=>a.r-b.r).filter(c=>curTier==='all'||c.tier===curTier).filter(c=>!q||c.title.toLowerCase().includes(q)||c.cat.toLowerCase().includes(q)||c.sum.toLowerCase().includes(q)||c.sym.some(s=>s.toLowerCase().includes(q)));
+      const box=document.getElementById('guide-cards');
+      if(!list.length){box.innerHTML='<div class="panel"
+style="padding:20px;text-align:center;color:var(--mu);">No matching
+conditions found.</div>';return}
+      box.innerHTML=list.map(c=>{const
+isEx=expId===c.id,lbl=c.tier==='green'?'🟢 GREEN •
+BEST':c.tier==='amber'?'🟡 AMBER • CAUTION':'🔴 RED • CRITICAL';
+        return `<div class="cond-card"><div class="cond-bar
+t-${c.tier}"></div><button class="cond-head"
+onclick="toggleCond('${c.id}')"><div><span class="tier-pill
+tp-${c.tier} mono">${lbl}</span> <span class="mono"
+style="font-size:11px;color:var(--mu);margin-left:5px;">${c.cat}</span><div
+style="font-weight:700;font-size:14.5px;color:#fff;">${c.title}</div><div
+style="font-size:12px;color:var(--mu);">${c.sum}</div></div><span
+style="color:var(--cy);font-size:12px;white-space:nowrap;">${isEx?'▲
+Collapse':'▼ Expand'}</span></button>${isEx?`<div
+class="cond-body"><div class="mono"
+style="font-size:11.5px;color:var(--cy);">Vitals: ${c.vit}</div><div
+class="detail-grid"><div class="detail-box"><h4>Why It
+Happens</h4>${c.why}</div><div class="detail-box"><h4>Immediate
+Steps</h4><ol style="padding-left:16px;">${c.steps.map(s=>`<li>${s}</li>`).join('')}</ol></div></div><div
+style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;"><span
+style="font-size:12px;color:#cbd5e1;"><strong>Escalation:</strong>
+${c.esc}</span><button class="btn-pri"
+onclick="openExplain('${c.id}')">📄 Open Full Explanation Page
+→</button></div></div>`:''}</div>`;
+      }).join('');
+    }
+    renderGuidance();
+
+    // LOVED ONES VOICE RECORDINGS
+    let voices=[];try{voices=JSON.parse(localStorage.getItem('ares_voices_h')||'[]')}catch(e){}
+    let mRec=null,chunks=[],recording=false,playObj=null,playId=null;
+    function saveVoices(){try{localStorage.setItem('ares_voices_h',JSON.stringify(voices))}catch(e){}}
+    function addVoice(url,defName){
+      const s=document.getElementById('v-sender').value.trim()||defName||'Loved
+One';
+      const rel=document.getElementById('v-rel').value;
+      const t=document.getElementById('v-title').value.trim()||'Voice
+Message from Earth';
+      voices.unshift({id:'v'+Date.now(),s,rel,t,url,d:new
+Date().toLocaleDateString()});
+      document.getElementById('v-sender').value='';document.getElementById('v-title').value='';
+      saveVoices();renderVoices();
+    }
+    async function toggleRecord(){
+      const btn=document.getElementById('rec-btn'),err=document.getElementById('rec-err');err.classList.add('hidden');
+      if(recording&&mRec){mRec.stop();recording=false;btn.innerText='🎙️
+Record Voice Now';return}
+      try{
+        const st=await navigator.mediaDevices.getUserMedia({audio:true});
+        mRec=new MediaRecorder(st);chunks=[];
+        mRec.ondataavailable=e=>{if(e.data.size>0)chunks.push(e.data)};
+        mRec.onstop=()=>{const r=new
+FileReader();r.onloadend=()=>addVoice(r.result,'Loved
+One');r.readAsDataURL(new
+Blob(chunks,{type:'audio/webm'}));st.getTracks().forEach(x=>x.stop())};
+        mRec.start();recording=true;btn.innerText='⏹ Stop & Save Recording';
+      }catch(e){err.innerText='Mic blocked or unavailable — use
+"Upload Audio File" to add
+recordings.';err.classList.remove('hidden')}
+    }
+    function uploadVoice(e){const
+f=e.target.files[0];if(!f)return;const r=new
+FileReader();r.onloadend=()=>addVoice(r.result,f.name.replace(/\.[^/.]+$/,''));r.readAsDataURL(f);e.target.value=''}
+    function playVoice(id){
+      const v=voices.find(x=>x.id===id);if(!v)return;
+      if(playId===id&&playObj){playObj.pause();playId=null;renderVoices();return}
+      if(playObj)playObj.pause();
+      playObj=new
+Audio(v.url);playId=id;playObj.onended=()=>{playId=null;renderVoices()};playObj.play();renderVoices();
+    }
+    function delVoice(id){voices=voices.filter(x=>x.id!==id);saveVoices();renderVoices()}
+    function renderVoices(){
+      const b=document.getElementById('voice-list');
+      if(!voices.length){b.innerHTML='<div
+style="text-align:center;padding:18px;font-size:12px;color:var(--mu);border:1px
+dashed var(--bd);border-radius:10px;">No recordings saved yet. Record
+or upload a message from loved ones above.</div>';return}
+      b.innerHTML=voices.map(v=>`<div
+class="list-item"><div><strong>${v.s}</strong> <span class="badge
+mono">${v.rel}</span><div
+style="font-size:11px;color:var(--mu);">${v.t} •
+${v.d}</div></div><div style="display:flex;gap:6px;"><button
+class="btn-pri" onclick="playVoice('${v.id}')">${playId===v.id?'⏸
+Pause':'▶ Listen'}</button><button class="btn-sec"
+onclick="delVoice('${v.id}')">🗑️</button></div></div>`).join('');
+    }
+    renderVoices();
+
+    // VITAL RENEWAL REMINDERS
+    let rems=[
+      {id:'rm1',name:'Heart Rate & HRV
+Scan',hrs:4,last:Date.now()-3.9*3600000,note:'Check resting pulse &
+HRV'},
+      {id:'rm2',name:'Radiation Dosimetry
+Check',hrs:6,last:Date.now()-6.2*3600000,note:'Verify RAD vs habitat
+TEPC'},
+      {id:'rm3',name:'Blood Oxygen (SpO2) &
+CO2',hrs:6,last:Date.now()-2*3600000,note:'Keep SpO2 >97% & CO2
+<3mmHg'},
+      {id:'rm4',name:'Blood Pressure &
+Hydration',hrs:12,last:Date.now()-5*3600000,note:'Cuff BP +
+electrolyte intake'},
+      {id:'rm5',name:'Core Body
+Temperature',hrs:12,last:Date.now()-1*3600000,note:'Early
+fever/thermal check'}
+    ];
+    try{const s=localStorage.getItem('ares_rems_h');if(s)rems=JSON.parse(s)}catch(e){}
+    function saveRems(){try{localStorage.setItem('ares_rems_h',JSON.stringify(rems))}catch(e){}}
+    function renewRem(id){rems=rems.map(r=>r.id===id?{...r,last:Date.now()}:r);saveRems();renderRems()}
+    function addReminder(e){e.preventDefault();const
+n=document.getElementById('rem-name').value.trim();if(!n)return;rems.push({id:'rm'+Date.now(),name:n,hrs:Number(document.getElementById('rem-hrs').value)||4,last:Date.now(),note:'Custom
+vital check'});document.getElementById('rem-name').value='';saveRems();renderRems()}
+    function renderRems(){
+      const now=Date.now();
+      document.getElementById('reminder-list').innerHTML=rems.map(r=>{
+        const m=Math.round((r.last+r.hrs*3600000-now)/60000),due=m<=0;
+        const badge=due?`<span class="tier-pill tp-red mono">OVERDUE
+(${Math.abs(m)}m)</span>`:m<60?`<span class="tier-pill tp-amber
+mono">DUE IN ${m}m</span>`:`<span class="tier-pill tp-green mono">Due
+in ${Math.floor(m/60)}h ${m%60}m</span>`;
+        return `<div class="list-item"
+style="border-color:${due?'rgba(251,113,133,.5)':m<60?'rgba(251,191,36,.45)':'var(--bd)'}"><div><strong>${r.name}</strong>
+${badge}<div style="font-size:11px;color:var(--mu);">Every ${r.hrs}h •
+${r.note}</div></div><button class="btn-pri"
+onclick="renewRem('${r.id}')">✓ Renew</button></div>`;
+      }).join('');
+    }
+    renderRems();setInterval(renderRems,30000);
+
+    // 30 SPACE MEDICAL DEVICES GUIDEBOOK + NASA REPORTING
+    const DEVICES=[
+      {n:1,id:'d1',c:'Cardio',name:'ISS Portable 12-Lead ECG /
+Holter',p:'Tracks cardiac rhythm and HRV.',b:['Flatline or 60Hz noise
+despite wet pads','Lead-off alarm stuck with intact cables','Frozen
+waveform timestamp'],k:'Run 1mV calibration pulse & swap Lead
+II.',bk:'Use wrist HR monitor & alert CMO.'},
+      {n:2,id:'d2',c:'Respiratory',name:'Flight Pulse Oximeter
+(SpO2)',p:'Measures blood oxygen & pulse.',b:['SpO2 jumps &gt;8%
+randomly at rest','Dim/absent red LED in clip','Shows --- on warm
+finger'],k:'Test on warmed index finger shaded from cabin
+LEDs.',bk:'Use backup CHeCS pulse oximeter.'},
+      {n:3,id:'d3',c:'Radiation',name:'Personal Radiation Dosimeter
+(RAD)',p:'Tracks cumulative proton & cosmic dose.',b:['Stays 0.00 mSv
+across high-latitude pass','Sudden &gt;50 mSv spike with no solar
+alert','Faded display or checksum fault'],k:'Compare against fixed
+TEPC habitat monitor.',bk:'Log crewmate dosimeter & file report.'},
+      {n:4,id:'d4',c:'Cardio',name:'Ambulatory Blood Pressure
+Cuff',p:'Oscillometric BP measurement.',b:['Inflates past 240 mmHg
+nonstop','Audible air hiss / fails to hold 5s','Repeated Error E-03
+Cuff Leak'],k:'Inspect hose Luer-lock & velcro seam.',bk:'Use manual
+aneroid cuff + stethoscope.'},
+      {n:5,id:'d5',c:'Imaging',name:'Ultrasound-2 Imaging
+Console',p:'Cardiac, ocular (SANS) & abdominal scans.',b:['Dark
+acoustic dropout band across screen','Probe head exceeds 41°C in 2
+min','No Doppler flow over carotid'],k:'Scan phantom gel block &
+reseat probe lock.',bk:'Swap phased/linear array transducer.'},
+      {n:6,id:'d6',c:'Ocular',name:'Optical Coherence Tomography
+(OCT)',p:'Maps retinal thickness & optic disc edema.',b:['Signal
+strength &lt;4/10 blurred layers','Mirror stage grinding noise','Laser
+light stays amber'],k:'Clean objective optics & re-home motor
+stage.',bk:'Use handheld fundoscope + Amsler grid.'},
+      {n:7,id:'d7',c:'Ocular',name:'Intraocular Pressure
+Tonometer',p:'Monitors eye pressure shifts.',b:['Variance &gt;4 mmHg
+over 3 taps','Probe fails smooth rebound','Battery blinks while
+full'],k:'Fit sterile tip & test vertical block.',bk:'Document acuity
+& defer tonometry.'},
+      {n:8,id:'d8',c:'Lab',name:'i-STAT Handheld Blood
+Analyzer',p:'Rapid blood gases, electrolytes &
+troponin.',b:['Cartridge Error 44 fluidic fault','Microgravity bubble
+trapped in well','Heater block fails 37°C'],k:'Run electronic
+simulator cartridge.',bk:'Retry fresh cartridge bubble-free.'},
+      {n:9,id:'d9',c:'Emergency',name:'CHeCS Automated External
+Defibrillator',p:'Cardiac arrest shock & rhythm analysis.',b:['Status
+window flashes RED or chirps','Dried gel on expired pads','Capacitor
+self-test failure'],k:'Check status light, pad date & battery
+latch.',bk:'Deploy backup AED immediately.'},
+      {n:10,id:'d10',c:'Respiratory',name:'Portable Capnometer
+(ETCO2)',p:'Monitors exhaled CO2 ventilation.',b:['Zero waveform on
+active breaths','Moisture blocking sample tubing','Baseline stays
+&gt;0 mmHg on inhale'],k:'Replace water-trap line & zero to
+ambient.',bk:'Check MCA module CO2 telemetry.'},
+      {n:11,id:'d11',c:'Vitals',name:'Infrared Tympanic
+Thermometer',p:'Core temperature screening.',b:['Reads &lt;34.5°C or
+&gt;42°C on healthy crew','Cloudy/scratched IR lens','&gt;1.2°C
+difference left vs right ear'],k:'Use fresh probe cover & clean IR
+lens.',bk:'Switch to oral clinical digital thermometer.'},
+      {n:12,id:'d12',c:'Respiratory',name:'Pulmonary Function
+Spirometer',p:'Measures FEV1, FVC & airway flow.',b:['Turbine spins
+sluggishly or sticks','&gt;3% drift on 3L calibration
+syringe','Clogged pressure port'],k:'Verify with 3.0L precision
+syringe.',bk:'Clean mesh or use peak-flow meter.'},
+      {n:13,id:'d13',c:'Therapy',name:'Microgravity IV Infusion
+Pump',p:'Exact IV delivery without gravity.',b:['Persistent
+Air-in-Line alarm when purged','False occlusion alarm','Flow deviates
+&gt;5% from set rate'],k:'Re-prime zero-G filter line & clean optical
+sensor.',bk:'Use secondary syringe driver.'},
+      {n:14,id:'d14',c:'Emergency',name:'Portable Suction
+Aspirator',p:'Clears airway fluids in zero-G.',b:['Vacuum stays weaker
+than -300 mmHg occluded','Motor whines with zero tip suction','Cracked
+canister gasket'],k:'Pinch tubing and check 5s vacuum rise.',bk:'Use
+manual bulb/syringe aspirator.'},
+      {n:15,id:'d15',c:'Emergency',name:'CHeCS Portable
+Ventilator',p:'Mechanical breathing support.',b:['Continuous High/Low
+pressure alarms','Tidal volume drops &gt;15% below set','O2 blender
+concentration mismatch'],k:'Attach test lung, check seals & run
+POST.',bk:'Ventilate manually via BVM + 100% O2.'},
+      {n:16,id:'d16',c:'Sleep',name:'Actiwatch Circadian Sleep
+Monitor',p:'Tracks motion, light & sleep efficiency.',b:['Zero
+movement logged during active work','Lux light sensor reads 0
+constantly','Clock drifts &gt;5 min/week'],k:'Dock with crew laptop to
+verify battery & sync.',bk:'Log sleep manually in Mental Check-In.'},
+      {n:17,id:'d17',c:'Lab',name:'Urine & Osmolality
+Refractometer',p:'Measures dehydration & stone risk.',b:['Reads
+outside 1.000 on distilled water','Scratched prism / air-gap
+blur','Dim sample LED'],k:'Zero-calibrate with sterile distilled
+water.',bk:'Use hydration dipstick strips.'},
+      {n:18,id:'d18',c:'Lab',name:'Zero-G Venipuncture & Vacutainer
+Kit',p:'Splash-free microgravity blood draw.',b:['Tubes lose vacuum &
+fail to draw','Butterfly hub leaks droplets','Centrifuge rotor
+vibration fault'],k:'Check tube expiration & balance centrifuge
+buckets.',bk:'Draw with Luer-lock heparinized syringe.'},
+      {n:19,id:'d19',c:'Ocular',name:'Digital Retinal
+Fundoscope',p:'Optic nerve head photos for SANS.',b:['Dark vignetting
+masking optic disc','Autofocus hunts without locking','USB transfer
+drops mid-capture'],k:'Test focus on calibration eye phantom.',bk:'Use
+direct ophthalmoscope in dim bay.'},
+      {n:20,id:'d20',c:'ENT',name:'Diagnostic Otoscope &
+Tympanometer',p:'Inspects eardrum pressure & fluid.',b:['Pneumatic
+bulb leaks seal pressure','Flat tympanogram without wax','Dim
+LED/halogen light'],k:'Occlude tip on finger & check pressure
+hold.',bk:'Use spare ENT otoscope head.'},
+      {n:21,id:'d21',c:'Metabolic',name:'Handheld Glucometer & Ketone
+Meter',p:'Blood sugar & metabolic checks.',b:['Alternates HI/LO on
+repeat drop','Error E-2 humidified strip','Code-chip failure'],k:'Run
+Level 1 & 2 control solution.',bk:'Use i-STAT CHEM8+ cartridge.'},
+      {n:22,id:'d22',c:'Metabolic',name:'Bio-Impedance Body
+Composition Meter',p:'Tracks muscle loss & body water.',b:['Phase
+angle jumps &gt;3° between trials','Impedance &gt;1500 Ohms from dry
+pad','Cable noise'],k:'Test 500-Ohm reference resistor.',bk:'Log tape
+anthropometry & fluid weights.'},
+      {n:23,id:'d23',c:'Muscle',name:'ARED Biomechanical Load
+Sensor',p:'Measures bone-loading exercise forces.',b:['Reads 0 lbs
+while pulling cylinders','Jerky vacuum piston cavitation','Offset
+&gt;25 lbs when unloaded'],k:'Zero load cell unloaded & check vacuum
+gauge.',bk:'Switch to T2 treadmill / bungees.'},
+      {n:24,id:'d24',c:'ENT',name:'Acoustic Noise & Hearing
+Dosimeter',p:'Monitors fan/pump decibel exposure.',b:['Stuck at 30 dBA
+in loud module','Crumbling/wet mic foam','Overload light stuck
+on'],k:'Apply 94 dB acoustic calibrator tone.',bk:'Wear earplugs in
+&gt;70 dBA bays & swap.'},
+      {n:25,id:'d25',c:'Sterile',name:'Portable Medical Steam/UV
+Sterilizer',p:'Sterilizes surgical & dental tools.',b:['Spore strip
+turns positive','UV bulb flickers or lid seal leaks','Aborts before
+121°C / 15m'],k:'Run empty chemical indicator strip test.',bk:'Use
+pre-sterilized sealed single-use packs.'},
+      {n:26,id:'d26',c:'Cardio',name:'Chibis Lower-Body Negative
+Pressure Suit',p:'Restores lower-body fluid pre-landing.',b:['Skirt
+loses vacuum above -25 mmHg','Vacuum pump overheats/surges','Sudden
+pressure drop'],k:'Seal bellows on test plug at -45 mmHg for
+60s.',bk:'Abort & use compression stockings + saline.'},
+      {n:27,id:'d27',c:'Skin',name:'Tele-Dermatology Polarized Macro
+Scope',p:'High-res cabin rash & wound imaging.',b:['Polarizer stuck or
+hazy','Pink/green tint distorting redness','Flickering LED
+ring'],k:'Photograph calibrated color card.',bk:'Use tablet camera
+with neutral white light.'},
+      {n:28,id:'d28',c:'Cardio',name:'Acoustic & Microgravity
+Stethoscope',p:'Heart/lung auscultation in noisy cabin.',b:['Active
+noise cancellation squeals','Zero heart sound despite good
+contact','Cracked tubing'],k:'Tap diaphragm with ANC toggled
+on/off.',bk:'Use passive acoustic stethoscope.'},
+      {n:29,id:'d29',c:'Emergency',name:'Emergency Hyperbaric / O2
+Regulator',p:'100% O2 for hypoxia or decompression.',b:['Gauge drops
+fast with valve closed','Demand diaphragm sticks or leaks','Cracked
+silicone straps'],k:'Verify &gt;2000 psi bottle & negative-seal
+test.',bk:'Switch to adjacent PBA / O2 outlet mask.'},
+      {n:30,id:'d30',c:'Neuro',name:'Neurological Reflex &
+Pupillometer',p:'Quantifies pupil speed & brain pressure.',b:['IR
+tracker misses iris center','Flash fails light reflex
+capture','Latency differs &gt;0.8s on control'],k:'Run calibration
+target card.',bk:'Perform manual penlight pupil exam.'}
+    ];
+    let devExp=null,repTarget=null,nasaLogs=[];
+    try{nasaLogs=JSON.parse(localStorage.getItem('ares_nasa_h')||'[]')}catch(e){}
+    document.getElementById('d-cat').innerHTML=['All',...new
+Set(DEVICES.map(d=>d.c))].map(c=>`<option value="${c}">Category:
+${c}</option>`).join('');
+    function toggleDev(id){devExp=devExp===id?null:id;renderDevices()}
+    function openNasaModal(id){repTarget=DEVICES.find(d=>d.id===id);if(!repTarget)return;document.getElementById('nr-title').innerText=repTarget.name;document.getElementById('nr-sym').value='';document.getElementById('nr-sym').placeholder='Default:
+'+repTarget.b[0].replace(/&gt;|&lt;/g,m=>m==='&gt;'?'>':'<');document.getElementById('nasa-modal').classList.remove('hidden')}
+    function closeNasaModal(){document.getElementById('nasa-modal').classList.add('hidden')}
+    function submitNasaReport(e){
+      e.preventDefault();if(!repTarget)return;
+      nasaLogs.unshift({tid:'NASA-CHECS-'+Math.floor(10000+Math.random()*90000),did:repTarget.id,dname:repTarget.name,loc:document.getElementById('nr-loc').value.trim()||'CHeCS
+Rack',sev:document.getElementById('nr-sev').value,sym:document.getElementById('nr-sym').value.trim()||repTarget.b[0],rep:crew.name,at:new
+Date().toUTCString()});
+      try{localStorage.setItem('ares_nasa_h',JSON.stringify(nasaLogs))}catch(err){}
+      closeNasaModal();renderDevices();
+    }
+    function downloadGuidebook(){
+      const txt=['NASA / ARES-74 30 SPACE MEDICAL DEVICES BREAKDOWN
+GUIDEBOOK','=============================================================',...DEVICES.map(d=>`\n#${d.n}.
+${d.name} [${d.c}]\nPurpose: ${d.p}\nBreakdown Signs: ${d.b.join(';
+').replace(/&gt;/g,'>').replace(/&lt;/g,'<')}\nDiagnostic Check:
+${d.k}\nBackup Action: ${d.bk}`)].join('\n');
+      const a=document.createElement('a');a.href=URL.createObjectURL(new
+Blob([txt],{type:'text/plain'}));a.download='NASA-30-Space-Medical-Devices-Guidebook.txt';a.click();
+    }
+    function renderDevices(){
+      const q=(document.getElementById('d-search')?.value||'').trim().toLowerCase(),cat=document.getElementById('d-cat')?.value||'All';
+      const logBox=document.getElementById('nasa-log-box');
+      if(nasaLogs.length){logBox.classList.remove('hidden');document.getElementById('nasa-log-list').innerHTML=nasaLogs.map(r=>`<div
+style="background:var(--card2);border:1px solid
+rgba(251,191,36,.3);border-radius:10px;padding:9px;font-size:11.5px;"><div
+style="display:flex;justify-content:space-between;"><strong>${r.dname}</strong><span
+class="tier-pill tp-red mono">${r.tid}</span></div><div
+style="color:var(--am);">${r.sev} • ${r.loc}</div><div
+style="color:var(--mu);">${r.sym}</div><div class="mono"
+style="font-size:10px;color:#64748b;margin-top:3px;">By ${r.rep} •
+${r.at}</div></div>`).join('')}else logBox.classList.add('hidden');
+      const list=DEVICES.filter(d=>(cat==='All'||d.c===cat)&&(!q||d.name.toLowerCase().includes(q)||d.p.toLowerCase().includes(q)||d.b.some(x=>x.toLowerCase().includes(q))));
+      document.getElementById('device-list').innerHTML=list.map(d=>{
+        const isEx=devExp===d.id,rep=nasaLogs.some(r=>r.did===d.id);
+        return `<div class="cond-card"><button class="cond-head"
+onclick="toggleDev('${d.id}')" style="padding-left:15px;"><div><span
+class="badge mono" style="margin-left:0;">#${d.n} • ${d.c}</span>
+${rep?'<span class="tier-pill tp-red mono">⚠️ Reported to
+NASA</span>':''}<div
+style="font-weight:700;font-size:14.5px;color:#fff;margin-top:3px;">${d.name}</div><div
+style="font-size:12px;color:var(--mu);">${d.p}</div></div><span
+style="color:var(--cy);font-size:12px;white-space:nowrap;">${isEx?'▲
+Hide Guide':'▼ Breakdown Guide'}</span></button>${isEx?`<div
+class="cond-body"><div class="detail-grid"><div class="detail-box"
+style="border-color:rgba(251,113,133,.35);"><h4
+style="color:var(--rd);">How to Spot Breakdown</h4><ul
+style="padding-left:16px;">${d.b.map(s=>`<li>${s}</li>`).join('')}</ul></div><div
+class="detail-box"><h4>Diagnostic
+Self-Test</h4><p>${d.k}</p></div><div class="detail-box"><h4>Backup
+Action</h4><p>${d.bk}</p></div></div><div
+style="display:flex;justify-content:flex-end;"><button class="btn-red"
+onclick="openNasaModal('${d.id}')">🚨 Report Suspicious / Broken
+Device to NASA</button></div></div>`:''}</div>`;
+      }).join('');
+    }
+    renderDevices();
+
+    let actx=null,src=null;function
+stopSound(){if(src){try{src.stop()}catch(e){}}src=null}
+    function playSound(t){stopSound();const
+Ctx=window.AudioContext||window.webkitAudioContext;if(!Ctx)return;try{if(!actx)actx=new
+Ctx();if(actx.state==='suspended')actx.resume();const
+g=actx.createGain();g.gain.value=0.35;g.connect(actx.destination);if(t==='hz'){const
+o=actx.createOscillator();o.frequency.value=432;o.connect(g);o.start();src=o;return}const
+b=actx.createBuffer(1,actx.sampleRate*2,actx.sampleRate),d=b.getChannelData(0);let
+l=0;for(let i=0;i<d.length;i++){const
+w=Math.random()*2-1;l=(l+0.02*w)/1.02;d[i]=t==='ocean'?l*3:w*0.2}const
+s=actx.createBufferSource();s.buffer=b;s.loop=true;const
+f=actx.createBiquadFilter();f.type='lowpass';f.frequency.value=t==='ocean'?320:1200;s.connect(f);f.connect(g);s.start();src=s}catch(e){}}
+  </script>
+</body>
+</html>
+
