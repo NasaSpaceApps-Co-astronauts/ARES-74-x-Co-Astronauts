@@ -6,7 +6,7 @@
 ## 1. Sprint Hedefleri ve Planlanan Görevler
 - Hedef: Projeyi cilalamak, dokümantasyonu bitirmek, yayına almak ve teslim etmek.
 - Planlanan görevler:
-  - Hata düzeltme ve son testler (Sorumlu: Elif Örnek - Günsu Bostancı)
+  - Hata düzeltme ve son testler (Sorumlu: Zeynep Ece Kayaboynu - Günsu Bostancı)
   - README, veri kaynakları ve demo linki (Sorumlu: Pınar Aslan)
   - Netlify ile canlı yayın: https://coastronautshealthtracker.netlify.app (Sorumlu: Elif Örnek)
   - Demo videosu ve Space Apps platformuna teslim (Sorumlu: Elif Örnek)
