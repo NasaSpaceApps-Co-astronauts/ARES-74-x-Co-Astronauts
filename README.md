@@ -25,6 +25,7 @@ ARES-74 × Co-Astronauts is an integrated health and crew support platform desig
 - MediaRecorder API (voice recording)
 - Browser localStorage (voices, reminders, chat history, reports)
 - Optional backend endpoint for AURA (`/api/chat`, Gemini-based), with automatic local fallback
+-Netlify(hosting)
 
 ## Data Sources
 - NASA ISSLIVE (Lightstreamer) – ISS cabin telemetry
@@ -41,7 +42,7 @@ ARES-74 × Co-Astronauts is an integrated health and crew support platform desig
 - This is a prototype and does not replace professional medical advice.
 
 ## How to Run
-No installation needed. Open `index.html` in a browser, or use the GitHub Pages link above. An internet connection is needed for live NASA/NOAA feeds. If a feed is unreachable, the app continues with preset data.
+No installation needed. Open the live demo at https://coastronautshealthtracker.netlify.app, or download `index.html` from this repository and open it in a browser. An internet connection is needed for live NASA/NOAA feeds. If a feed is unreachable, the app continues with preset data.
 
 ## Team
 | Member | Role |
