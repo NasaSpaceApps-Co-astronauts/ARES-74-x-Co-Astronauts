@@ -1,13 +1,56 @@
-# ARES-74-x-Co-Astronauts
-ARES-74 × Co-Astronauts is an integrated health and crew support platform combining astronaut health monitoring, spacecraft environmental data, medical guidance, psychological support, and biomedical equipment data in a single interface for safer space missions.Human spaceflight involves a constant interplay of physiological, psychological, and environmental factors, and treating them separately can delay the detection of emerging risks. To address this, the platform brings astronaut health monitoring, spacecraft environmental data, medical guidance, psychological support, and biomedical equipment data together in a single, accessible interface.
+# ARES-74 × Co-Astronauts – NASA Space Apps Challenge
 
-On the physiological side, the platform tracks personal crew biometric telemetry, sends vital-check renewal reminders, and monitors circadian rhythm and sleep patterns, which are often disrupted by microgravity and irregular light cycles. Health status is communicated through color-coded Green, Amber, and Red guidance, so crew members can quickly understand their condition and decide what to do next, even without immediate support from Earth.
+## Project Summary
+ARES-74 × Co-Astronauts is an integrated health and crew support platform designed to support astronaut health, wellbeing, and operational safety throughout a mission. Human spaceflight involves a constant interplay of physiological, psychological, and environmental factors, and treating them separately can delay the detection of emerging risks. The platform brings astronaut health monitoring, spacecraft environmental data, medical guidance, psychological support, and biomedical equipment data together in a single, accessible web interface, designed for situations where real-time medical support from Earth is delayed.
 
-Environmental safety is addressed through a habitat dashboard that follows cabin pressure, temperature, oxygen, and carbon dioxide levels. Live space weather and radiation alerts from NASA and NOAA feeds appear alongside personal vitals, helping astronauts connect environmental conditions with possible biological effects and diagnose health risks early.
+## Live Demo
+- Demo: [GitHub Pages linkinizi buraya yazın]
+- Demo video: [Video linkinizi buraya yazın]
 
-Psychological wellbeing is supported through AURA, a PIN-protected AI support chat that offers a private space for conversation, along with 4-7-8 breathing exercises and Earth sensory audio tools built with the Web Audio API. These features help reduce stress and counter the effects of prolonged isolation and confinement.
+## Key Features
+- **Crew telemetry dashboard:** heart rate, HRV, strain, sleep/recovery, SpO₂ and radiation dose for 4 crew profiles.
+- **NASA HRP risk monitors:** 8 spaceflight risk panels (SANS, bone and renal, muscle, vestibular, immune, microbiome, decompression, teamwork and nutrition).
+- **Health Guidance:** 15 conditions in a Green / Amber / Red system, with full explanation pages and action protocols.
+- **Habitat and space weather feed:** cabin pressure, temperature, O₂ and CO₂, ISS orbit, NOAA proton flux and Kp index, NASA DONKI alerts.
+- **AURA chat (PIN protected):** Psychologist, Flight Surgeon and Ops Copilot roles, with a local adaptive response engine and an optional backend (`/api/chat`) connection.
+- **Wellbeing tools:** 4-7-8 breathing pacer, Earth soundscapes (Web Audio API), daily psychological check-in.
+- **Loved Ones Voice Vault:** record or upload personal audio messages.
+- **Vital renewal reminders:** timers for heart rate, radiation, SpO₂, blood pressure and temperature checks.
+- **30 Medical Devices Guidebook:** breakdown signs, self-tests and backup actions, with a downloadable guide and a simulated NASA CHeCS anomaly report form.
+- **NASA CSV importer:** load NASA datasets or the HRP telemetry template and play them back.
 
-For equipment reliability, the platform includes a troubleshooting guide for spotting breakdowns across 30 medical devices, so crew members can verify that diagnostic tools work correctly before relying on their readings.
+## Technologies
+- HTML5, CSS3, vanilla JavaScript (single-page application, `index.html`)
+- Web Audio API (offline soundscapes)
+- MediaRecorder API (voice recording)
+- Browser localStorage (voices, reminders, chat history, reports)
+- Optional backend endpoint for AURA (`/api/chat`, Gemini-based), with automatic local fallback
 
-The platform is built with React, TypeScript, Tailwind CSS, and a Node.js and Express backend. It models realistic spaceflight scenarios for both short-duration and long-duration missions, prioritizing intuitive, practical usability when real-time medical support from Earth is delayed. By unifying body, mind, habitat, and equipment data, ARES-74 × Co-Astronauts gives astronauts a clearer picture of their situation and supports safer, healthier missions. Its design focuses on clarity and speed, so that critical information can be understood at a glance during demanding, time-sensitive moments of a mission.
-Project Demonstration: https://drive.google.com/drive/folders/1ATVacuyMAf9cSwrYo6vKOZrpPv77j9aX?usp=sharing
+## Data Sources
+- NASA ISSLIVE (Lightstreamer) – ISS cabin telemetry
+- wheretheiss.at – ISS orbit and altitude
+- NOAA SWPC – GOES proton flux and planetary K-index
+- NASA DONKI – space weather notifications
+- NASA Human Research Program risk areas: https://www.nasa.gov/hrp/risks/
+- NASA Astronauts CSV (public dataset)
+
+## Important Notes
+- Crew biometric values are **simulated presets** for demonstration. They can be replaced through a CSV file or a REST/WebSocket feed.
+- The "Submit to NASA" device report is a **simulated workflow** saved locally in the browser.
+- The AURA demo PIN is `1969`. This is a prototype lock and not real security.
+- This is a prototype and does not replace professional medical advice.
+
+## How to Run
+No installation needed. Open `index.html` in a browser, or use the GitHub Pages link above. An internet connection is needed for live NASA/NOAA feeds. If a feed is unreachable, the app continues with preset data.
+
+## Team
+| Member | Role |
+|---|---|
+| [Ad Soyad] | Scrum Master |
+| [Ad Soyad] | [Rol] |
+
+## Sprint Reports
+- [Sprint 1](docs/sprints/sprint-1-raporu.md)
+- [Sprint 2](docs/sprints/sprint-2-raporu.md)
+- [Sprint 3](docs/sprints/sprint-3-raporu.md)
+- [Sprint 4](docs/sprints/sprint-4-raporu.md)
