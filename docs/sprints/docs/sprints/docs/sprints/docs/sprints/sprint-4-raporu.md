@@ -1,46 +1,46 @@
-# Sprint 4 Raporu
+# Sprint 4 Report
 
-**Tarih Aralığı:** 15.11.2026 15:00 – 15.11.2026 23:00
-**Scrum Master:** Pınar Aslan
+**Date Range:** 15.11.2026 15:00 – 15.11.2026 23:00
+**Scrum Master:** Pınar ASLAN
 
-## 1. Sprint Hedefleri ve Planlanan Görevler
-- Hedef: Projeyi cilalamak, dokümantasyonu bitirmek, yayına almak ve teslim etmek.
-- Planlanan görevler:
-  - Hata düzeltme ve son testler (Sorumlu: Zeynep Ece Kayaboynu - Günsu Bostancı)
-  - README, veri kaynakları ve demo linki (Sorumlu: Pınar Aslan)
-  - Netlify ile canlı yayın: https://coastronautshealthtracker.netlify.app (Sorumlu: Elif Örnek)
-  - Demo videosu ve Space Apps platformuna teslim (Sorumlu: Elif Örnek)
+## 1. Sprint Goals and Planned Missions
+- Goal: To polish the project, finish the documentation, publish and deliver.
+- Scheduled tasks:
+- Error correction and final tests (Responsible: Zeynep Ece KAYABOYNU - Günsu BOSTANCI)
+- README, data sources and demo link (Responsible: Pınar ASLAN)
+- Live broadcast with Netlify: https://coastronautshealthtracker.netlify.app (Responsible: Elif ÖRNEK)
+- Demo video and submission to Space Apps platform (Responsible: Elif ÖRNEK)
 
-## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
-**Tamamlanan:**
-- Son testler
-- README ve sprint raporları
-- Netlify üzerinde canlı yayın
-- Demo videosu
-- Proje teslimi
+## 2.Completed and Incomplete Studies
+**Completed:**
+- Final tests
+- README and sprint reports
+- Live broadcast on Netlify
+- Demo video
+- Project delivery
 
-**Tamamlanamayan (ve nedeni):**
-- Gerçek cihaz/sensör entegrasyonu ve canlı AI backend'i, gelecek çalışma olarak bırakıldı.
+**Incomplete (and reason):**
+- Real device/sensor integration and live AI backend, left as future work.
 
-## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
-- Teslim saatine yakın yoğunluk.
-- Son dakika hataları.
-- Yayın ortamında harici veri akışlarının (NASA/NOAA) bağlantı süresinin değişken olması.
+## 3. Technical / Organizational Problems Encountered
+- Density close to delivery time.
+- Last minute mistakes.
+- The connection time of external data streams (NASA/NOAA) in the broadcast environment is variable.
 
-## 4. Uygulanan Çözüm Yöntemleri
-- Yeni özellik eklemek yerine mevcut özelliklerin kararlılığına odaklanıldı.
-- Teslim öncesi kontrol listesi kullanıldı.
-- Canlı veri alınamazsa uygulamanın hazır verilerle çalışmaya devam etmesi sağlandı.
+## 4. Applied Solution Methods
+- Focused on the stability of existing features instead of adding new features.
+- Pre-delivery checklist was used.
+- If live data cannot be obtained, it is ensured that the application continues to work with ready-made data.
 
-## 5. Takım Üyelerinin Katkıları
-| Üye | Rol | Katkı |
+## 5. Contributions of Team Members
+|Member | Role |Contribution |
 |---|---|---|
-| Pınar Aslan | Scrum Master | README ve dokümantasyon, sprint raporları
-| Günsu Bostancı | Araştırma | Hata düzeltme ve testler |
-| Elif Örnek| Geliştirici| Netlify yayını, veri kaynakları kontrolü |
-| Zeynep Ece Kayaboynu | Ürün / İçerik | Hata düzeltme ve testler |
+| Pınar ASLAN| Scrum Master | README And documentation, sprint reports|
+| Günsu BOSTANCI | Research |Bug fixes and tests |
+| Elif ÖRNEK| Developer| Netlify broadcast, data sources control|
+| Zeynep Ece KAYABOYNU| Product / Content| Bug fixes and tests |
 
-## 6. Gelecek Çalışmalar
-- Gerçek biyometrik cihaz ve sensör entegrasyonu.
-- Canlı yapay zekâ backend'i (Gemini) ile AURA.
-- Daha kapsamlı kullanıcı testleri.
+## 6. Future Studies
+- Real biometric device and sensor integration.
+- AURA with live artificial intelligence backend (Gemini).
+- More comprehensive user tests.
