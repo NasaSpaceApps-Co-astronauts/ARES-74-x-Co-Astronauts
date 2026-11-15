@@ -1,17 +1,18 @@
 # Sprint 1 Report
 
 **Date Range:** 14.11.2026 09:00 – 14.11.2026 13:00
-**Scrum Master:** Pınar Aslan
+
+**Scrum Master:** Pınar ASLAN
 
 ## 1. Sprint Goals and Planned Missions
 
 - Goal: Defining the problem, determining the scope and creating the technical plan.
 - Scheduled tasks:
-- Clarification of the problem definition (Responsible: Elif Örnek)
-- Investigation of NASA/NOAA data sources and NASA HRP risk areas (Responsible: Günsu Bostancı)
-- Determination of the feature list and priorities (Responsible: Zeynep Ece Kayaboynu)
-- Interface draft (Responsible: Pınar Aslan)
-- Technology selection: HTML, CSS, JavaScript, Web Audio API (Responsible: Elif Örnek)
+- Clarification of the problem definition (Responsible: Elif ÖRNEK)
+- Investigation of NASA/NOAA data sources and NASA HRP risk areas (Responsible: Günsu BOSTANCI)
+- Determination of the feature list and priorities (Responsible: Zeynep Ece KAYABOYNU)
+- Interface draft (Responsible: Pınar ASLAN)
+- Technology selection: HTML, CSS, JavaScript, Web Audio API (Responsible: Elif ÖRNEK)
 
 ## 2. Completed and Incomplete Studies
 **Completed:**
