@@ -4,8 +4,8 @@
 ARES-74 × Co-Astronauts is an integrated health and crew support platform designed to support astronaut health, wellbeing, and operational safety throughout a mission. Human spaceflight involves a constant interplay of physiological, psychological, and environmental factors, and treating them separately can delay the detection of emerging risks. The platform brings astronaut health monitoring, spacecraft environmental data, medical guidance, psychological support, and biomedical equipment data together in a single, accessible web interface, designed for situations where real-time medical support from Earth is delayed.
 
 ## Live Demo
-- Demo: [GitHub Pages linkinizi buraya yazın]
-- Demo video: [Video linkinizi buraya yazın]
+- Demo: - Demo: https://coastronautshealthtracker.netlify.app
+- Demo video: (https://drive.google.com/drive/folders/1ATVacuyMAf9cSwrYo6vKOZrpPv77j9aX)
 
 ## Key Features
 - **Crew telemetry dashboard:** heart rate, HRV, strain, sleep/recovery, SpO₂ and radiation dose for 4 crew profiles.
