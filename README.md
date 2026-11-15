@@ -33,7 +33,7 @@ ARES-74 × Co-Astronauts is an integrated health and crew support platform desig
 - NASA DONKI – space weather notifications
 - NASA Human Research Program risk areas: https://www.nasa.gov/hrp/risks/
 - NASA Astronauts CSV (public dataset)
-
+  
 ## Important Notes
 - Crew biometric values are **simulated presets** for demonstration. They can be replaced through a CSV file or a REST/WebSocket feed.
 - The "Submit to NASA" device report is a **simulated workflow** saved locally in the browser.
