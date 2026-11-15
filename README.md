@@ -46,8 +46,10 @@ No installation needed. Open `index.html` in a browser, or use the GitHub Pages 
 ## Team
 | Member | Role |
 |---|---|
-| [Ad Soyad] | Scrum Master |
-| [Ad Soyad] | [Rol] |
+| Pınar Aslan | Scrum Master | Araştırma ve Veri|
+| Elif Örnek | Geliştirici ve Lider | Netlify canlı yayın, demo linki ve demo videosu, SpaceApps Teslimi|
+| Zeynep Ece Kayaboynu |Ürün/İçerik|Araştırma ve Veri|Hata düzeltme ve testler |
+| Günsu Bostancı |Araştırma ve Veri|Hata düzeltme ve testler |
 
 ## Sprint Reports
 - [Sprint 1](docs/sprints/sprint-1-raporu.md)
