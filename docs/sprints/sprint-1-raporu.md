@@ -1,45 +1,46 @@
-# Sprint 1 Raporu
+# Sprint 1 Report
 
-**Tarih Aralığı:** 14.11.2026 09:00 – 14.11.2026 13:00
+**Date Range:** 14.11.2026 09:00 – 14.11.2026 13:00
 **Scrum Master:** Pınar Aslan
 
-## 1. Sprint Hedefleri ve Planlanan Görevler
-- Hedef: Problemi tanımlamak, kapsamı belirlemek ve teknik planı oluşturmak.
-- Planlanan görevler:
-  - Problem tanımının netleştirilmesi (Sorumlu: Elif Örnek)
-  - NASA/NOAA veri kaynaklarının ve NASA HRP risk alanlarının araştırılması (Sorumlu: Günsu Bostancı)
-  - Özellik listesinin ve önceliklerin belirlenmesi (Sorumlu: Zeynep Ece Kayaboynu)
-  - Arayüz taslağı (Sorumlu: Pınar Aslan)
-  - Teknoloji seçimi: HTML, CSS, JavaScript, Web Audio API (Sorumlu: Elif Örnek)
+## 1. Sprint Goals and Planned Missions
 
-## 2. Tamamlanan ve Tamamlanamayan Çalışmalar
-**Tamamlanan:**
-- Problem tanımı ve kapsam
-- Veri kaynakları ve NASA HRP risk alanları araştırması
-- Özellik listesi ve önceliklendirme
-- İlk arayüz taslağı
-- Teknoloji seçimi
+- Goal: Defining the problem, determining the scope and creating the technical plan.
+- Scheduled tasks:
+- Clarification of the problem definition (Responsible: Elif Örnek)
+- Investigation of NASA/NOAA data sources and NASA HRP risk areas (Responsible: Günsu Bostancı)
+- Determination of the feature list and priorities (Responsible: Zeynep Ece Kayaboynu)
+- Interface draft (Responsible: Pınar Aslan)
+- Technology selection: HTML, CSS, JavaScript, Web Audio API (Responsible: Elif Örnek)
 
-**Tamamlanamayan:**
-- Yok
+## 2. Completed and Incomplete Studies
+**Completed:**
+- Problem definition and scope
+- Data sources and NASA HRP risk areas research
+- Feature list and prioritization
+- First interface draft
+- Technology selection
 
-## 3. Karşılaşılan Teknik / Organizasyonel Sorunlar
-- Kısa etkinlik süresine karşı geniş kapsam.
-- Rollerin netleşmesi için zaman harcanması.
+**Incomplete:**
+- None
 
-## 4. Uygulanan Çözüm Yöntemleri
-- Özellikler "olmazsa olmaz" ve "zaman kalırsa" olarak önceliklendirildi.
-- Hızlı geliştirme ve kolay yayınlama için tek sayfalık, bağımlılıksız yapı seçildi.
+## 3. Technical / Organizational Problems Encountered
+- Wide coverage against short activity time.
+- Taking time to clarify the roles.
 
-## 5. Takım Üyelerinin Katkıları
-| Üye | Rol | Katkı |
+## 4. Applied Solution Methods
+- Features were prioritized as "must-have" and "in time".
+- One-page, non-addictive structure was chosen for fast development and easy publishing.
+
+## 5. Contributions of Team Members
+| Member| Role | Contribution |
 |---|---|---|
-| Pınar Aslan | Scrum Master | Sprint planlaması, koordinasyon, arayüz taslağı |
-| Elif Örnek | Geliştirici | Problem tanımı, teknoloji seçimi |
-| Günsu Bostancı | Araştırma / Veri | NASA/NOAA veri kaynakları ve HRP risk alanları araştırması |
-| Zeynep Ece Kayaboynu | Ürün / İçerik | Özellik listesi ve önceliklendirme |
+| Pınar ASLAN | Scrum Master | Sprint planning, coordination, interface draft |
+| Elif ÖRNEK |Developer | Problem definition, technology selection |
+| Günsu BOSTANCI|Research / Data| NASA/NOAA data sources and HRP risk areas research|
+| Zeynep Ece KAYABOYNU| Product / Content| Feature list and prioritization |
 
-## 6. Bir Sonraki Sprint Hedefleri
-- Ana sayfa yapısını ve kontrol panelini oluşturmak.
-- Mürettebat telemetri kartlarını ve HRP risk panellerini geliştirmek.
-- Yeşil/Sarı/Kırmızı sağlık rehberliğinin ilk sürümünü hazırlamak.
+## 6. Next Sprint Goals
+- Creating the home page structure and control panel.
+- Developing crew telemetry cards and HRP risk panels.
+- Preparing the first version of Green/Yellow/Red health guidance.
