@@ -35,10 +35,10 @@
 ## 5. Takım Üyelerinin Katkıları
 | Üye | Rol | Katkı |
 |---|---|---|
-| Pınar Aslan | Scrum Master | Demo videosu, teslim, sprint raporları |
-| Elif Örnek | Geliştirici | Hata düzeltme ve testler |
-| Günsu Bostancı | Araştırma / Veri | Netlify yayını, veri kaynakları kontrolü |
-| Zeynep Ece Kayaboynu | Ürün / İçerik | README ve dokümantasyon |
+| Pınar Aslan | Scrum Master | README ve dokümantasyon, sprint raporları
+| Günsu Bostancı | Araştırma | Hata düzeltme ve testler |
+| Elif Örnek| Geliştirici| Netlify yayını, veri kaynakları kontrolü |
+| Zeynep Ece Kayaboynu | Ürün / İçerik | Hata düzeltme ve testler |
 
 ## 6. Gelecek Çalışmalar
 - Gerçek biyometrik cihaz ve sensör entegrasyonu.
